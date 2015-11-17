@@ -62,6 +62,7 @@ public class TitleBar extends RelativeLayout {
     private boolean mSkipTitleBarAnimations;
     private Animator mTitleBarAnimator;
     private boolean mIsFixedTitleBar;
+
     private AnimatorListener mHideTileBarAnimatorListener = new AnimatorListener() {
 
         @Override
