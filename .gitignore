@@ -1,0 +1,5 @@
+.gradle
+.idea
+StockBrowser.iml
+local.properties
+build

@@ -1,0 +1,7 @@
+<resources>
+    <string name="library_name">BrowserCompats</string>
+
+    <!-- 移植com.android.internal.R.string.sendText到应用层 -->
+    <string name="sendText">Choose an action for text</string>
+
+</resources>
