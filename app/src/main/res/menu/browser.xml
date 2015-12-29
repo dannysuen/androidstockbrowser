@@ -98,7 +98,7 @@
     </group>
     <group
         android:id="@+id/MAIN_SHORTCUT_MENU"
-        android:visible="true">
+        android:visible="false">
         <item
             android:id="@+id/view_downloads_menu_id"
             android:alphabeticShortcut="j"/>
