@@ -35,12 +35,13 @@ public class BrowserPreferencesPage extends PreferenceActivity {
 
     public static final String CURRENT_PAGE = "currentPage";
     private static final Set<String> sKnownFragments = new HashSet<String>(Arrays.asList(
-            "GeneralPreferencesFragment",
-            "PrivacySecurityPreferencesFragment",
-            "AccessibilityPreferencesFragment",
-            "AdvancedPreferencesFragment",
-            "BandwidthPreferencesFragment",
-            "LabPreferencesFragment"));
+            "com.stockbrowser.preferences.GeneralPreferencesFragment",
+            "com.stockbrowser.preferences.PrivacySecurityPreferencesFragment",
+            "com.stockbrowser.preferences.AccessibilityPreferencesFragment",
+            "com.stockbrowser.preferences.AdvancedPreferencesFragment",
+            "com.stockbrowser.preferences.BandwidthPreferencesFragment",
+            "com.stockbrowser.preferences.WebsiteSettingsFragment",
+            "com.stockbrowser.preferences.LabPreferencesFragment"));
     private List<Header> mHeaders;
 
     @Override

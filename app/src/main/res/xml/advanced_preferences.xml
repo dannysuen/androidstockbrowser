@@ -18,7 +18,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Entries and values in this list are set dynamically. -->
-    <com.android.browser.search.SearchEnginePreference
+    <com.stockbrowser.search.SearchEnginePreference
         android:defaultValue="google"
         android:dialogTitle="@string/pref_content_search_engine"
         android:key="search_engine"
@@ -92,7 +92,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_extras_reset_default_title">
-        <com.android.browser.BrowserYesNoPreference
+        <com.stockbrowser.BrowserYesNoPreference
             android:dialogIcon="@android:drawable/ic_dialog_alert"
             android:dialogMessage="@string/pref_extras_reset_default_dlg"
             android:key="reset_default_preferences"

@@ -27,19 +27,19 @@
         <com.stockbrowser.preferences.FontSizePreview
             android:title="@string/preview"/>
 
-        <com.android.browser.preferences.SeekBarSummaryPreference
+        <com.stockbrowser.preferences.SeekBarSummaryPreference
             android:defaultValue="10"
             android:key="text_zoom"
             android:max="30"
             android:title="@string/pref_text_zoom"/>
 
-        <com.android.browser.preferences.SeekBarSummaryPreference
+        <com.stockbrowser.preferences.SeekBarSummaryPreference
             android:defaultValue="5"
             android:key="double_tap_zoom"
             android:max="10"
             android:title="@string/pref_zoom_on_double_tap"/>
 
-        <com.android.browser.preferences.SeekBarSummaryPreference
+        <com.stockbrowser.preferences.SeekBarSummaryPreference
             android:defaultValue="0"
             android:key="min_font_size"
             android:max="20"
@@ -57,7 +57,7 @@
             android:summary="@string/pref_inverted_summary"
             android:title="@string/pref_inverted"/>
 
-        <com.android.browser.preferences.SeekBarSummaryPreference
+        <com.stockbrowser.preferences.SeekBarSummaryPreference
             android:defaultValue="0"
             android:dependency="inverted"
             android:key="inverted_contrast"
