@@ -15,63 +15,63 @@
    limitations under the License.
 -->
 <com.android.browser.SnapshotBar
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/bg_urlbar"
-    android:orientation="horizontal">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_urlbar"
+        android:orientation="horizontal">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:paddingLeft="8dip"
-        android:src="@drawable/ic_search_category_history"/>
-
-    <ImageView
-        android:id="@+id/favicon"
-        android:layout_width="52dip"
-        android:layout_height="match_parent"
-        android:paddingLeft="16dip"
-        android:paddingRight="16dip"
-        android:scaleType="fitCenter"/>
-
-    <FrameLayout
-        android:id="@+id/toggle_container"
-        android:layout_width="0dip"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:singleLine="true"
-            android:textAppearance="?android:attr/textAppearanceMedium"/>
-
-        <TextView
-            android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:singleLine="true"
-            android:textAppearance="?android:attr/textAppearanceMedium"/>
+            android:paddingLeft="8dip"
+            android:src="@drawable/ic_search_category_history"/>
+
+    <ImageView
+            android:id="@+id/favicon"
+            android:layout_width="52dip"
+            android:layout_height="match_parent"
+            android:paddingLeft="16dip"
+            android:paddingRight="16dip"
+            android:scaleType="fitCenter"/>
+
+    <FrameLayout
+            android:id="@+id/toggle_container"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+        <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
     </FrameLayout>
 
     <ImageButton
-        android:id="@+id/tab_switcher"
-        style="@style/HoloButton"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/accessibility_button_navscreen"
-        android:src="@drawable/ic_windows_holo_dark"/>
+            android:id="@+id/tab_switcher"
+            style="@style/HoloButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/accessibility_button_navscreen"
+            android:src="@drawable/ic_windows_holo_dark"/>
 
     <ImageButton
-        android:id="@+id/more"
-        style="@style/HoloButton"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/accessibility_button_more"
-        android:gravity="center_vertical"
-        android:src="@*android:drawable/ic_menu_moreoverflow_normal_holo_dark"/>
+            android:id="@+id/more"
+            style="@style/HoloButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/accessibility_button_more"
+            android:gravity="center_vertical"
+            android:src="@*android:drawable/ic_menu_moreoverflow_normal_holo_dark"/>
 </com.android.browser.SnapshotBar>

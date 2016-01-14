@@ -15,11 +15,11 @@
 -->
 
 <selector
-    xmlns:android="http://schemas.android.com/apk/res/android">
+        xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:drawable="@drawable/textfield_active_holo_dark"
-        android:state_focused="true"/>
+            android:drawable="@drawable/textfield_active_holo_dark"
+            android:state_focused="true"/>
     <item
-        android:drawable="@drawable/textfield_default_holo_dark"
-        android:state_focused="false"/>
+            android:drawable="@drawable/textfield_default_holo_dark"
+            android:state_focused="false"/>
 </selector>

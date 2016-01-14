@@ -16,11 +16,11 @@
 package com.stockbrowser;
 
 public interface CombinedBookmarksCallbacks {
-    void openUrl(String url);
+	void openUrl(String url);
 
-    void openInNewTab(String... urls);
+	void openInNewTab(String... urls);
 
-    void openSnapshot(long id);
+	void openSnapshot(long id);
 
-    void close();
+	void close();
 }

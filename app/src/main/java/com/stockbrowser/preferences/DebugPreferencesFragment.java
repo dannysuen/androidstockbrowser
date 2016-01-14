@@ -16,37 +16,37 @@
 
 package com.stockbrowser.preferences;
 
-import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.Preference.OnPreferenceClickListener;
-import android.preference.PreferenceFragment;
-
 import com.android.browser.R;
 import com.stockbrowser.BrowserSettings;
 import com.stockbrowser.GoogleAccountLogin;
 import com.stockbrowser.PreferenceKeys;
 
+import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.Preference.OnPreferenceClickListener;
+import android.preference.PreferenceFragment;
+
 public class DebugPreferencesFragment extends PreferenceFragment
-        implements OnPreferenceClickListener {
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+		implements OnPreferenceClickListener {
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
-        // Load the XML preferences file
-        addPreferencesFromResource(R.xml.debug_preferences);
+		// Load the XML preferences file
+		addPreferencesFromResource(R.xml.debug_preferences);
 
-        Preference e = findPreference(PreferenceKeys.PREF_RESET_PRELOGIN);
-        e.setOnPreferenceClickListener(this);
-    }
+		Preference e = findPreference(PreferenceKeys.PREF_RESET_PRELOGIN);
+		e.setOnPreferenceClickListener(this);
+	}
 
-    @Override
-    public boolean onPreferenceClick(Preference preference) {
-        if (PreferenceKeys.PREF_RESET_PRELOGIN.equals(preference.getKey())) {
-            BrowserSettings.getInstance().getPreferences().edit()
-                    .remove(GoogleAccountLogin.PREF_AUTOLOGIN_TIME)
-                    .apply();
-            return true;
-        }
-        return false;
-    }
+	@Override
+	public boolean onPreferenceClick(Preference preference) {
+		if (PreferenceKeys.PREF_RESET_PRELOGIN.equals(preference.getKey())) {
+			BrowserSettings.getInstance().getPreferences().edit()
+					.remove(GoogleAccountLogin.PREF_AUTOLOGIN_TIME)
+					.apply();
+			return true;
+		}
+		return false;
+	}
 }

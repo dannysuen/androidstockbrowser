@@ -24,129 +24,124 @@ import android.preference.DialogPreference;
 import android.util.AttributeSet;
 
 /**
- * The {@link YesNoPreference} is a preference to show a dialog with Yes and No
- * buttons.
- * <p>
- * This preference will store a boolean into the SharedPreferences.
+ * The {@link YesNoPreference} is a preference to show a dialog with Yes and No buttons. <p> This preference
+ * will store a boolean into the SharedPreferences.
  */
 public class YesNoPreference extends DialogPreference {
-    private boolean mWasPositiveResult;
-    
-    public YesNoPreference(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-    }
+	private boolean mWasPositiveResult;
 
-    public YesNoPreference(Context context, AttributeSet attrs) {
-//        this(context, attrs, com.android.internal.R.attr.yesNoPreferenceStyle);
-        this(context, attrs, 0);
-    }
-    
-    public YesNoPreference(Context context) {
-        this(context, null);
-    }
+	public YesNoPreference(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+	}
 
-    @Override
-    protected void onDialogClosed(boolean positiveResult) {
-        super.onDialogClosed(positiveResult);
+	public YesNoPreference(Context context, AttributeSet attrs) {
+		//        this(context, attrs, com.android.internal.R.attr.yesNoPreferenceStyle);
+		this(context, attrs, 0);
+	}
 
-        if (callChangeListener(positiveResult)) {
-            setValue(positiveResult);
-        }
-    }
+	public YesNoPreference(Context context) {
+		this(context, null);
+	}
 
-    /**
-     * Sets the value of this preference, and saves it to the persistent store
-     * if required.
-     * 
-     * @param value The value of the preference.
-     */
-    public void setValue(boolean value) {
-        mWasPositiveResult = value;
-        
-        persistBoolean(value);
-        
-        notifyDependencyChange(!value);
-    }
-    
-    /**
-     * Gets the value of this preference.
-     * 
-     * @return The value of the preference.
-     */
-    public boolean getValue() {
-        return mWasPositiveResult;
-    }
-    
-    @Override
-    protected Object onGetDefaultValue(TypedArray a, int index) {
-        return a.getBoolean(index, false);
-    }
+	@Override
+	protected void onDialogClosed(boolean positiveResult) {
+		super.onDialogClosed(positiveResult);
 
-    @Override
-    protected void onSetInitialValue(boolean restorePersistedValue, Object defaultValue) {
-        setValue(restorePersistedValue ? getPersistedBoolean(mWasPositiveResult) :
-            (Boolean) defaultValue);
-    }
+		if (callChangeListener(positiveResult)) {
+			setValue(positiveResult);
+		}
+	}
 
-    @Override
-    public boolean shouldDisableDependents() {
-        return !mWasPositiveResult || super.shouldDisableDependents();
-    }
-    
-    @Override
-    protected Parcelable onSaveInstanceState() {
-        final Parcelable superState = super.onSaveInstanceState();
-        if (isPersistent()) {
-            // No need to save instance state since it's persistent
-            return superState;
-        }
-        
-        final SavedState myState = new SavedState(superState);
-        myState.wasPositiveResult = getValue();
-        return myState;
-    }
+	/**
+	 * Gets the value of this preference.
+	 *
+	 * @return The value of the preference.
+	 */
+	public boolean getValue() {
+		return mWasPositiveResult;
+	}
 
-    @Override
-    protected void onRestoreInstanceState(Parcelable state) {
-        if (!state.getClass().equals(SavedState.class)) {
-            // Didn't save state for us in onSaveInstanceState
-            super.onRestoreInstanceState(state);
-            return;
-        }
-         
-        SavedState myState = (SavedState) state;
-        super.onRestoreInstanceState(myState.getSuperState());
-        setValue(myState.wasPositiveResult);
-    }
-    
-    private static class SavedState extends BaseSavedState {
-        boolean wasPositiveResult;
-        
-        public SavedState(Parcel source) {
-            super(source);
-            wasPositiveResult = source.readInt() == 1;
-        }
+	/**
+	 * Sets the value of this preference, and saves it to the persistent store if required.
+	 *
+	 * @param value The value of the preference.
+	 */
+	public void setValue(boolean value) {
+		mWasPositiveResult = value;
 
-        @Override
-        public void writeToParcel(Parcel dest, int flags) {
-            super.writeToParcel(dest, flags);
-            dest.writeInt(wasPositiveResult ? 1 : 0);
-        }
+		persistBoolean(value);
 
-        public SavedState(Parcelable superState) {
-            super(superState);
-        }
+		notifyDependencyChange(!value);
+	}
 
-        public static final Creator<SavedState> CREATOR =
-                new Creator<SavedState>() {
-            public SavedState createFromParcel(Parcel in) {
-                return new SavedState(in);
-            }
+	@Override
+	protected Object onGetDefaultValue(TypedArray a, int index) {
+		return a.getBoolean(index, false);
+	}
 
-            public SavedState[] newArray(int size) {
-                return new SavedState[size];
-            }
-        };
-    }
-    
+	@Override
+	protected void onSetInitialValue(boolean restorePersistedValue, Object defaultValue) {
+		setValue(restorePersistedValue ? getPersistedBoolean(mWasPositiveResult) :
+				(Boolean) defaultValue);
+	}
+
+	@Override
+	public boolean shouldDisableDependents() {
+		return !mWasPositiveResult || super.shouldDisableDependents();
+	}
+
+	@Override
+	protected Parcelable onSaveInstanceState() {
+		final Parcelable superState = super.onSaveInstanceState();
+		if (isPersistent()) {
+			// No need to save instance state since it's persistent
+			return superState;
+		}
+
+		final SavedState myState = new SavedState(superState);
+		myState.wasPositiveResult = getValue();
+		return myState;
+	}
+
+	@Override
+	protected void onRestoreInstanceState(Parcelable state) {
+		if (!state.getClass().equals(SavedState.class)) {
+			// Didn't save state for us in onSaveInstanceState
+			super.onRestoreInstanceState(state);
+			return;
+		}
+
+		SavedState myState = (SavedState) state;
+		super.onRestoreInstanceState(myState.getSuperState());
+		setValue(myState.wasPositiveResult);
+	}
+
+	private static class SavedState extends BaseSavedState {
+		public static final Creator<SavedState> CREATOR =
+				new Creator<SavedState>() {
+					public SavedState createFromParcel(Parcel in) {
+						return new SavedState(in);
+					}
+
+					public SavedState[] newArray(int size) {
+						return new SavedState[size];
+					}
+				};
+		boolean wasPositiveResult;
+
+		public SavedState(Parcel source) {
+			super(source);
+			wasPositiveResult = source.readInt() == 1;
+		}
+
+		public SavedState(Parcelable superState) {
+			super(superState);
+		}
+
+		@Override
+		public void writeToParcel(Parcel dest, int flags) {
+			super.writeToParcel(dest, flags);
+			dest.writeInt(wasPositiveResult ? 1 : 0);
+		}
+	}
 }

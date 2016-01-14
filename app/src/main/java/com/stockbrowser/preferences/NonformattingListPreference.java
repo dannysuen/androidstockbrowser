@@ -21,28 +21,27 @@ import android.util.AttributeSet;
 
 public class NonformattingListPreference extends ListPreference {
 
-    private CharSequence mSummary;
+	private CharSequence mSummary;
 
-    public NonformattingListPreference(Context context) {
-        super(context);
-    }
+	public NonformattingListPreference(Context context) {
+		super(context);
+	}
 
-    public NonformattingListPreference(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
+	public NonformattingListPreference(Context context, AttributeSet attrs) {
+		super(context, attrs);
+	}
 
-    @Override
-    public CharSequence getSummary() {
-        if (mSummary != null) {
-            return mSummary;
-        }
-        return super.getSummary();
-    }
+	@Override
+	public CharSequence getSummary() {
+		if (mSummary != null) {
+			return mSummary;
+		}
+		return super.getSummary();
+	}
 
-    @Override
-    public void setSummary(CharSequence summary) {
-        mSummary = summary;
-        super.setSummary(summary);
-    }
-
+	@Override
+	public void setSummary(CharSequence summary) {
+		mSummary = summary;
+		super.setSummary(summary);
+	}
 }

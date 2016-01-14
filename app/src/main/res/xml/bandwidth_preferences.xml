@@ -17,25 +17,25 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ListPreference
-        android:dialogTitle="@string/pref_data_preload_dialogtitle"
-        android:entries="@array/pref_data_preload_choices"
-        android:entryValues="@array/pref_data_preload_values"
-        android:key="preload_when"
-        android:summary="@string/pref_data_preload_summary"
-        android:title="@string/pref_data_preload_title"/>
+            android:dialogTitle="@string/pref_data_preload_dialogtitle"
+            android:entries="@array/pref_data_preload_choices"
+            android:entryValues="@array/pref_data_preload_values"
+            android:key="preload_when"
+            android:summary="@string/pref_data_preload_summary"
+            android:title="@string/pref_data_preload_title"/>
 
     <ListPreference
-        android:dialogTitle="@string/pref_link_prefetch_dialogtitle"
-        android:entries="@array/pref_link_prefetch_choices"
-        android:entryValues="@array/pref_link_prefetch_values"
-        android:key="link_prefetch_when"
-        android:summary="@string/pref_link_prefetch_summary"
-        android:title="@string/pref_link_prefetch_title"/>
+            android:dialogTitle="@string/pref_link_prefetch_dialogtitle"
+            android:entries="@array/pref_link_prefetch_choices"
+            android:entryValues="@array/pref_link_prefetch_values"
+            android:key="link_prefetch_when"
+            android:summary="@string/pref_link_prefetch_summary"
+            android:title="@string/pref_link_prefetch_title"/>
 
     <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="load_images"
-        android:summary="@string/pref_content_load_images_summary"
-        android:title="@string/pref_content_load_images"/>
+            android:defaultValue="true"
+            android:key="load_images"
+            android:summary="@string/pref_content_load_images_summary"
+            android:title="@string/pref_content_load_images"/>
 
 </PreferenceScreen>

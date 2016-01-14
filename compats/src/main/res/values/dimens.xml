@@ -8,5 +8,5 @@
            This helps in aligning titles when some items have icons and some don't. When space is
            at a premium, we don't pre-allocate any space. -->
     <dimen name="preference_icon_minWidth">0dp</dimen>
-    
+
 </resources>

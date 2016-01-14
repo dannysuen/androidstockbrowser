@@ -15,31 +15,31 @@
 -->
 
 <com.stockbrowser.view.BookmarkContainer
-    android:id="@+id/list_item"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bookmark_thumb_selector"
-    android:minHeight="@dimen/widgetItemMinHeight"
-    android:paddingLeft="16dip">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/list_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bookmark_thumb_selector"
+        android:minHeight="@dimen/widgetItemMinHeight"
+        android:paddingLeft="16dip">
 
     <ImageView
-        android:id="@+id/favicon"
-        android:layout_width="32dip"
-        android:layout_height="32dip"
-        android:layout_centerVertical="true"
-        android:background="@drawable/bookmark_list_favicon_bg"
-        android:scaleType="fitXY"/>
+            android:id="@+id/favicon"
+            android:layout_width="32dip"
+            android:layout_height="32dip"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bookmark_list_favicon_bg"
+            android:scaleType="fitXY"/>
 
     <TextView
-        android:id="@+id/label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@id/favicon"
-        android:ellipsize="marquee"
-        android:maxLines="1"
-        android:paddingLeft="16dip"
-        android:scrollHorizontally="true"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/favicon"
+            android:ellipsize="marquee"
+            android:maxLines="1"
+            android:paddingLeft="16dip"
+            android:scrollHorizontally="true"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
 </com.stockbrowser.view.BookmarkContainer>

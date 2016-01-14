@@ -16,12 +16,12 @@
 
 package com.stockbrowser;
 
+import com.android.browser.R;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.android.browser.R;
 
 /**
  * Custom layout for an item representing a bookmark in the browser.
@@ -29,28 +29,28 @@ import com.android.browser.R;
 // FIXME: Remove BrowserBookmarkItem
 class AddNewBookmark extends LinearLayout {
 
-    private TextView mUrlText;
+	private TextView mUrlText;
 
-    /**
-     * Instantiate a bookmark item, including a default favicon.
-     *
-     * @param context The application context for the item.
-     */
-    AddNewBookmark(Context context) {
-        super(context);
+	/**
+	 * Instantiate a bookmark item, including a default favicon.
+	 *
+	 * @param context The application context for the item.
+	 */
+	AddNewBookmark(Context context) {
+		super(context);
 
-        setWillNotDraw(false);
-        LayoutInflater factory = LayoutInflater.from(context);
-        factory.inflate(R.layout.add_new_bookmark, this);
-        mUrlText = (TextView) findViewById(R.id.url);
-    }
+		setWillNotDraw(false);
+		LayoutInflater factory = LayoutInflater.from(context);
+		factory.inflate(R.layout.add_new_bookmark, this);
+		mUrlText = (TextView) findViewById(R.id.url);
+	}
 
-    /**
-     * Set the new url for the bookmark item.
-     *
-     * @param url The new url for the bookmark item.
-     */
-    /* package */ void setUrl(String url) {
-        mUrlText.setText(url);
-    }
+	/**
+	 * Set the new url for the bookmark item.
+	 *
+	 * @param url The new url for the bookmark item.
+	 */
+	/* package */ void setUrl(String url) {
+		mUrlText.setText(url);
+	}
 }

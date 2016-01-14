@@ -15,59 +15,59 @@
 -->
 
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:padding="@dimen/combo_horizontalSpacing">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/combo_horizontalSpacing">
 
     <ImageView
-        android:id="@+id/thumb"
-        android:layout_width="@dimen/bookmarkThumbnailWidth"
-        android:layout_height="@dimen/bookmarkThumbnailHeight"
-        android:background="@drawable/border_thumb_bookmarks_widget_holo"
-        android:cropToPadding="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/thumbnail_bookmarks_widget_no_bookmark_holo"/>
+            android:id="@+id/thumb"
+            android:layout_width="@dimen/bookmarkThumbnailWidth"
+            android:layout_height="@dimen/bookmarkThumbnailHeight"
+            android:background="@drawable/border_thumb_bookmarks_widget_holo"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/thumbnail_bookmarks_widget_no_bookmark_holo"/>
 
     <TextView
-        android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/thumb"
-        android:layout_alignLeft="@id/thumb"
-        android:layout_alignRight="@id/thumb"
-        android:background="@drawable/overlay_url_bookmark_widget_holo"
-        android:ellipsize="end"
-        android:gravity="center_vertical"
-        android:paddingLeft="6dip"
-        android:paddingRight="2dip"
-        android:singleLine="true"
-        android:textColor="#AAAAAA"
-        android:textSize="14sp"
-        android:typeface="sans"/>
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/thumb"
+            android:layout_alignLeft="@id/thumb"
+            android:layout_alignRight="@id/thumb"
+            android:background="@drawable/overlay_url_bookmark_widget_holo"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:paddingLeft="6dip"
+            android:paddingRight="2dip"
+            android:singleLine="true"
+            android:textColor="#AAAAAA"
+            android:textSize="14sp"
+            android:typeface="sans"/>
 
     <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/thumb"
-        android:layout_alignRight="@+id/thumb"
-        android:layout_below="@+id/thumb"
-        android:layout_marginTop="6dip"
-        android:gravity="center_vertical"
-        android:lines="2"
-        android:paddingLeft="8dip"
-        android:textColor="#AAAAAA"
-        android:textSize="12sp"
-        android:typeface="sans"/>
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/thumb"
+            android:layout_alignRight="@+id/thumb"
+            android:layout_below="@+id/thumb"
+            android:layout_marginTop="6dip"
+            android:gravity="center_vertical"
+            android:lines="2"
+            android:paddingLeft="8dip"
+            android:textColor="#AAAAAA"
+            android:textSize="12sp"
+            android:typeface="sans"/>
 
     <ImageView
-        android:id="@+id/divider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/title"
-        android:layout_alignLeft="@+id/title"
-        android:layout_alignTop="@+id/title"
-        android:scaleType="fitXY"
-        android:src="?android:attr/dividerVertical"/>
+            android:id="@+id/divider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/title"
+            android:layout_alignLeft="@+id/title"
+            android:layout_alignTop="@+id/title"
+            android:scaleType="fitXY"
+            android:src="?android:attr/dividerVertical"/>
 </RelativeLayout>

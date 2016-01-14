@@ -18,44 +18,44 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:orientation="vertical"
-    >
+        >
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dip"
-        android:layout_marginRight="20dip"
-        android:layout_marginTop="12dip"
-        android:text="@string/username"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_marginTop="12dip"
+            android:text="@string/username"/>
 
     <EditText
-        android:id="@+id/username_edit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dip"
-        android:layout_marginLeft="20dip"
-        android:layout_marginRight="20dip"
-        android:imeOptions="actionNext"
-        android:inputType="text"
-        android:scrollHorizontally="true"
-        android:singleLine="true"/>
+            android:id="@+id/username_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dip"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:scrollHorizontally="true"
+            android:singleLine="true"/>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dip"
-        android:layout_marginRight="20dip"
-        android:text="@string/password"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:text="@string/password"/>
 
     <EditText
-        android:id="@+id/password_edit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dip"
-        android:layout_marginLeft="20dip"
-        android:layout_marginRight="20dip"
-        android:imeOptions="actionDone"
-        android:inputType="textPassword"
-        android:scrollHorizontally="true"
-        android:singleLine="true"/>
+            android:id="@+id/password_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dip"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:scrollHorizontally="true"
+            android:singleLine="true"/>
 </LinearLayout>

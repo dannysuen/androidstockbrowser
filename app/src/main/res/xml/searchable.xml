@@ -29,4 +29,4 @@
             android:searchSuggestIntentAction="android.intent.action.VIEW"
             android:searchSuggestSelection="history.url LIKE ?"
             android:voiceSearchMode="showVoiceSearchButton|launchWebSearch"
-    />
+        />

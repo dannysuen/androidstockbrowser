@@ -15,6 +15,8 @@
  */
 package com.stockbrowser.homepages;
 
+import com.stockbrowser.BrowserSettings;
+
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.content.Context;
@@ -25,8 +27,6 @@ import android.os.ParcelFileDescriptor;
 import android.util.Log;
 import android.webkit.WebResourceResponse;
 
-import com.stockbrowser.BrowserSettings;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,90 +35,89 @@ import java.io.PipedOutputStream;
 
 public class HomeProvider extends ContentProvider {
 
-    public static final String AUTHORITY = "com.stockbrowser.home";
-    public static final String MOST_VISITED = "content://" + AUTHORITY + "/";
-    private static final String TAG = "HomeProvider";
+	public static final String AUTHORITY = "com.stockbrowser.home";
+	public static final String MOST_VISITED = "content://" + AUTHORITY + "/";
+	private static final String TAG = "HomeProvider";
 
-    public static WebResourceResponse shouldInterceptRequest(Context context,
-                                                             String url) {
-        try {
-            boolean useMostVisited = BrowserSettings.getInstance().useMostVisitedHomepage();
-            if (useMostVisited && url.startsWith("content://")) {
-                Uri uri = Uri.parse(url);
-                if (AUTHORITY.equals(uri.getAuthority())) {
-                    InputStream ins = context.getContentResolver()
-                            .openInputStream(uri);
-                    return new WebResourceResponse("text/html", "utf-8", ins);
-                }
-            }
-            boolean listFiles = BrowserSettings.getInstance().isDebugEnabled();
-            if (listFiles && interceptFile(url)) {
-                PipedInputStream ins = new PipedInputStream();
-                PipedOutputStream outs = new PipedOutputStream(ins);
-                new RequestHandler(context, Uri.parse(url), outs).start();
-                return new WebResourceResponse("text/html", "utf-8", ins);
-            }
-        } catch (Exception e) {
-        }
-        return null;
-    }
+	public static WebResourceResponse shouldInterceptRequest(Context context,
+															 String url) {
+		try {
+			boolean useMostVisited = BrowserSettings.getInstance().useMostVisitedHomepage();
+			if (useMostVisited && url.startsWith("content://")) {
+				Uri uri = Uri.parse(url);
+				if (AUTHORITY.equals(uri.getAuthority())) {
+					InputStream ins = context.getContentResolver()
+							.openInputStream(uri);
+					return new WebResourceResponse("text/html", "utf-8", ins);
+				}
+			}
+			boolean listFiles = BrowserSettings.getInstance().isDebugEnabled();
+			if (listFiles && interceptFile(url)) {
+				PipedInputStream ins = new PipedInputStream();
+				PipedOutputStream outs = new PipedOutputStream(ins);
+				new RequestHandler(context, Uri.parse(url), outs).start();
+				return new WebResourceResponse("text/html", "utf-8", ins);
+			}
+		} catch (Exception e) {
+		}
+		return null;
+	}
 
-    private static boolean interceptFile(String url) {
-        if (!url.startsWith("file:///")) {
-            return false;
-        }
-        String fpath = url.substring(7);
-        File f = new File(fpath);
-        if (!f.isDirectory()) {
-            return false;
-        }
-        return true;
-    }
+	private static boolean interceptFile(String url) {
+		if (!url.startsWith("file:///")) {
+			return false;
+		}
+		String fpath = url.substring(7);
+		File f = new File(fpath);
+		if (!f.isDirectory()) {
+			return false;
+		}
+		return true;
+	}
 
-    @Override
-    public int delete(Uri uri, String selection, String[] selectionArgs) {
-        return 0;
-    }
+	@Override
+	public int delete(Uri uri, String selection, String[] selectionArgs) {
+		return 0;
+	}
 
-    @Override
-    public String getType(Uri uri) {
-        return null;
-    }
+	@Override
+	public String getType(Uri uri) {
+		return null;
+	}
 
-    @Override
-    public Uri insert(Uri uri, ContentValues values) {
-        return null;
-    }
+	@Override
+	public Uri insert(Uri uri, ContentValues values) {
+		return null;
+	}
 
-    @Override
-    public boolean onCreate() {
-        return false;
-    }
+	@Override
+	public boolean onCreate() {
+		return false;
+	}
 
-    @Override
-    public Cursor query(Uri uri, String[] projection, String selection,
-                        String[] selectionArgs, String sortOrder) {
-        return null;
-    }
+	@Override
+	public Cursor query(Uri uri, String[] projection, String selection,
+						String[] selectionArgs, String sortOrder) {
+		return null;
+	}
 
-    @Override
-    public int update(Uri uri, ContentValues values, String selection,
-                      String[] selectionArgs) {
-        return 0;
-    }
+	@Override
+	public int update(Uri uri, ContentValues values, String selection,
+					  String[] selectionArgs) {
+		return 0;
+	}
 
-    @Override
-    public ParcelFileDescriptor openFile(Uri uri, String mode) {
-        try {
-            ParcelFileDescriptor[] pipes = ParcelFileDescriptor.createPipe();
-            final ParcelFileDescriptor write = pipes[1];
-            AssetFileDescriptor afd = new AssetFileDescriptor(write, 0, -1);
-            new RequestHandler(getContext(), uri, afd.createOutputStream()).start();
-            return pipes[0];
-        } catch (IOException e) {
-            Log.e(TAG, "Failed to handle request: " + uri, e);
-            return null;
-        }
-    }
-
+	@Override
+	public ParcelFileDescriptor openFile(Uri uri, String mode) {
+		try {
+			ParcelFileDescriptor[] pipes = ParcelFileDescriptor.createPipe();
+			final ParcelFileDescriptor write = pipes[1];
+			AssetFileDescriptor afd = new AssetFileDescriptor(write, 0, -1);
+			new RequestHandler(getContext(), uri, afd.createOutputStream()).start();
+			return pipes[0];
+		} catch (IOException e) {
+			Log.e(TAG, "Failed to handle request: " + uri, e);
+			return null;
+		}
+	}
 }

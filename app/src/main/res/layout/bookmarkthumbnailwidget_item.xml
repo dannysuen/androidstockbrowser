@@ -15,50 +15,50 @@
 -->
 
 <RelativeLayout
-    android:id="@+id/list_item"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/list_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/thumb"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/widgetThumbnailHeight"
-        android:background="@drawable/border_thumb_bookmarks_widget_holo"
-        android:cropToPadding="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/thumbnail_bookmarks_widget_no_bookmark_holo"/>
+            android:id="@+id/thumb"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/widgetThumbnailHeight"
+            android:background="@drawable/border_thumb_bookmarks_widget_holo"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/thumbnail_bookmarks_widget_no_bookmark_holo"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/thumb"
-        android:layout_marginBottom="2dip"
-        android:layout_marginLeft="2dip"
-        android:layout_marginRight="2dip"
-        android:background="@drawable/overlay_url_bookmark_widget_holo">
-
-        <ImageView
-            android:id="@+id/favicon"
-            android:layout_width="@dimen/favicon_size"
-            android:layout_height="@dimen/favicon_size"
-            android:layout_gravity="center_vertical"
-            android:layout_marginBottom="4dip"
-            android:layout_marginLeft="4dip"
-            android:layout_marginRight="8dip"
-            android:layout_marginTop="4dip"
-            android:scaleType="centerInside"
-            android:src="@drawable/app_web_browser_sm"/>
-
-        <TextView
-            android:id="@+id/label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:textColor="@android:color/white"
-            android:textSize="12sp"
-            android:typeface="sans"/>
+            android:layout_alignBottom="@id/thumb"
+            android:layout_marginBottom="2dip"
+            android:layout_marginLeft="2dip"
+            android:layout_marginRight="2dip"
+            android:background="@drawable/overlay_url_bookmark_widget_holo">
+
+        <ImageView
+                android:id="@+id/favicon"
+                android:layout_width="@dimen/favicon_size"
+                android:layout_height="@dimen/favicon_size"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="4dip"
+                android:layout_marginLeft="4dip"
+                android:layout_marginRight="8dip"
+                android:layout_marginTop="4dip"
+                android:scaleType="centerInside"
+                android:src="@drawable/app_web_browser_sm"/>
+
+        <TextView
+                android:id="@+id/label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:typeface="sans"/>
     </LinearLayout>
 </RelativeLayout>

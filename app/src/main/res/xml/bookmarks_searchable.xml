@@ -27,4 +27,4 @@
             android:searchSuggestIntentAction="android.intent.action.VIEW"
             android:searchSuggestPath="bookmarks"
             android:searchSuggestSelection="bookmarks.url LIKE ?"
-    />
+        />

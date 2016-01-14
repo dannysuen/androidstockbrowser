@@ -14,26 +14,26 @@
      limitations under the License.
 -->
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:divider="?android:attr/dividerHorizontal"
-    android:dividerPadding="16dip"
-    android:orientation="vertical"
-    android:showDividers="middle">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="?android:attr/dividerHorizontal"
+        android:dividerPadding="16dip"
+        android:orientation="vertical"
+        android:showDividers="middle">
 
     <fragment
-        android:id="@+id/bookmarks"
-        class="com.stockbrowser.BrowserBookmarksPage"
-        android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1"/>
+            android:id="@+id/bookmarks"
+            class="com.stockbrowser.BrowserBookmarksPage"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"/>
 
     <Button
-        android:id="@+id/cancel"
-        style="?android:attr/buttonBarButtonStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@android:string/cancel"/>
+            android:id="@+id/cancel"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@android:string/cancel"/>
 
 </LinearLayout>

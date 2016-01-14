@@ -14,13 +14,13 @@
      limitations under the License.
 -->
 
-<TextView android:id="@+id/text"
-          xmlns:android="http://schemas.android.com/apk/res/android"
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          android:id="@+id/text"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_vertical"
           android:minWidth="50sp"
           android:textAppearance="?android:attr/textAppearanceSmall"
           android:textColor="?android:attr/textColorSecondary"
-    />
+        />
 

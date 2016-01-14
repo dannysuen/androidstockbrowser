@@ -14,66 +14,66 @@
      limitations under the License.
 -->
 <view
-    android:id="@+id/pages"
-    class="com.stockbrowser.view.EventRedirectingFrameLayout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:paddingTop="6dip">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/pages"
+        class="com.stockbrowser.view.EventRedirectingFrameLayout"
+        android:paddingTop="6dip">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/black"
-        android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/import_bookmarks_dialog_description"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="?android:attr/textColorAlertDialogListItem"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/import_bookmarks_dialog_description"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="?android:attr/textColorAlertDialogListItem"/>
 
         <ListView
-            android:id="@+id/add_remove_bookmarks"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:choiceMode="singleChoice"
-            android:divider="?android:attr/listDividerAlertDialog"
-            android:overScrollMode="ifContentScrolls"
-            android:scrollbars="vertical"/>
+                android:id="@+id/add_remove_bookmarks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:choiceMode="singleChoice"
+                android:divider="?android:attr/listDividerAlertDialog"
+                android:overScrollMode="ifContentScrolls"
+                android:scrollbars="vertical"/>
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/black"
-        android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:orientation="vertical">
 
         <TextView
-            android:id="@+id/select_account_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="?android:attr/textColorAlertDialogListItem"/>
+                android:id="@+id/select_account_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="?android:attr/textColorAlertDialogListItem"/>
 
         <ListView
-            android:id="@+id/select_account"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:choiceMode="singleChoice"
-            android:divider="?android:attr/listDividerAlertDialog"
-            android:overScrollMode="ifContentScrolls"
-            android:scrollbars="vertical"/>
+                android:id="@+id/select_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:choiceMode="singleChoice"
+                android:divider="?android:attr/listDividerAlertDialog"
+                android:overScrollMode="ifContentScrolls"
+                android:scrollbars="vertical"/>
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/confirm"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/black"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
+            android:id="@+id/confirm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
 </view>

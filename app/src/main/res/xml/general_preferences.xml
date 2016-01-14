@@ -17,18 +17,18 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <com.stockbrowser.preferences.NonformattingListPreference
-        android:entries="@array/pref_homepage_choices"
-        android:entryValues="@array/pref_homepage_values"
-        android:key="homepage_picker"
-        android:title="@string/pref_content_homepage"/>
+            android:entries="@array/pref_homepage_choices"
+            android:entryValues="@array/pref_homepage_values"
+            android:key="homepage_picker"
+            android:title="@string/pref_content_homepage"/>
 
     <PreferenceCategory android:title="@string/pref_general_autofill_title">
         <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="autofill_enabled"
-            android:summary="@string/pref_autofill_enabled_summary"
-            android:title="@string/pref_autofill_enabled"
-            />
+                android:defaultValue="true"
+                android:key="autofill_enabled"
+                android:summary="@string/pref_autofill_enabled_summary"
+                android:title="@string/pref_autofill_enabled"
+                />
 
     </PreferenceCategory>
 

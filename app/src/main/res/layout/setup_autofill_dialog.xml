@@ -24,18 +24,18 @@
               android:paddingTop="9dip">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dip"
-        android:text="@string/autofill_setup_dialog_message"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dip"
+            android:text="@string/autofill_setup_dialog_message"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     <CheckBox
-        android:id="@+id/setup_autofill_dialog_disable_autofill"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:text="@string/disable_autofill"
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
+            android:id="@+id/setup_autofill_dialog_disable_autofill"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="@string/disable_autofill"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
 
 </LinearLayout>

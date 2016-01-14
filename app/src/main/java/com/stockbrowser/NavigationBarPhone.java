@@ -15,6 +15,8 @@
  */
 package com.stockbrowser;
 
+import com.android.browser.R;
+
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
@@ -31,239 +33,235 @@ import android.widget.PopupMenu;
 import android.widget.PopupMenu.OnDismissListener;
 import android.widget.PopupMenu.OnMenuItemClickListener;
 
-import com.android.browser.R;
-
 @TargetApi(14)
 public class NavigationBarPhone extends NavigationBarBase implements
-        UrlInputView.StateListener, OnMenuItemClickListener, OnDismissListener {
+		UrlInputView.StateListener, OnMenuItemClickListener, OnDismissListener {
 
-    private ImageView mStopButton;
-    private ImageView mMagnify;
-    private ImageView mClearButton;
-    private ImageView mVoiceButton;
-    private Drawable mStopDrawable;
-    private Drawable mRefreshDrawable;
-    private String mStopDescription;
-    private String mRefreshDescription;
-    private View mTabSwitcher;
-    private View mComboIcon;
-    private View mTitleContainer;
-    private View mMore;
-    private Drawable mTextfieldBgDrawable;
-    private PopupMenu mPopupMenu;
-    private boolean mOverflowMenuShowing;
-    private boolean mNeedsMenu;
-    private View mIncognitoIcon;
+	private ImageView mStopButton;
+	private ImageView mMagnify;
+	private ImageView mClearButton;
+	private ImageView mVoiceButton;
+	private Drawable mStopDrawable;
+	private Drawable mRefreshDrawable;
+	private String mStopDescription;
+	private String mRefreshDescription;
+	private View mTabSwitcher;
+	private View mComboIcon;
+	private View mTitleContainer;
+	private View mMore;
+	private Drawable mTextfieldBgDrawable;
+	private PopupMenu mPopupMenu;
+	private boolean mOverflowMenuShowing;
+	private boolean mNeedsMenu;
+	private View mIncognitoIcon;
 
-    public NavigationBarPhone(Context context) {
-        super(context);
-    }
+	public NavigationBarPhone(Context context) {
+		super(context);
+	}
 
-    public NavigationBarPhone(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
+	public NavigationBarPhone(Context context, AttributeSet attrs) {
+		super(context, attrs);
+	}
 
-    public NavigationBarPhone(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-    }
+	public NavigationBarPhone(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+	}
 
-    @Override
-    protected void onFinishInflate() {
-        super.onFinishInflate();
-        mStopButton = (ImageView) findViewById(R.id.stop);
-        mStopButton.setOnClickListener(this);
-        mClearButton = (ImageView) findViewById(R.id.clear);
-        mClearButton.setOnClickListener(this);
-        mVoiceButton = (ImageView) findViewById(R.id.voice);
-        mVoiceButton.setOnClickListener(this);
-        mMagnify = (ImageView) findViewById(R.id.magnify);
-        mTabSwitcher = findViewById(R.id.tab_switcher);
-        mTabSwitcher.setOnClickListener(this);
-        mMore = findViewById(R.id.more);
-        mMore.setOnClickListener(this);
-        mComboIcon = findViewById(R.id.iconcombo);
-        mComboIcon.setOnClickListener(this);
-        mTitleContainer = findViewById(R.id.title_bg);
-        setFocusState(false);
-        Resources res = getContext().getResources();
-        mStopDrawable = res.getDrawable(R.drawable.ic_stop_holo_dark);
-        mRefreshDrawable = res.getDrawable(R.drawable.ic_refresh_holo_dark);
-        mStopDescription = res.getString(R.string.accessibility_button_stop);
-        mRefreshDescription = res.getString(R.string.accessibility_button_refresh);
-        mTextfieldBgDrawable = res.getDrawable(R.drawable.textfield_active_holo_dark);
-        mUrlInput.setContainer(this);
-        mUrlInput.setStateListener(this);
-        mNeedsMenu = !ViewConfiguration.get(getContext()).hasPermanentMenuKey();
-        mIncognitoIcon = findViewById(R.id.incognito_icon);
-    }
+	@Override
+	protected void onFinishInflate() {
+		super.onFinishInflate();
+		mStopButton = (ImageView) findViewById(R.id.stop);
+		mStopButton.setOnClickListener(this);
+		mClearButton = (ImageView) findViewById(R.id.clear);
+		mClearButton.setOnClickListener(this);
+		mVoiceButton = (ImageView) findViewById(R.id.voice);
+		mVoiceButton.setOnClickListener(this);
+		mMagnify = (ImageView) findViewById(R.id.magnify);
+		mTabSwitcher = findViewById(R.id.tab_switcher);
+		mTabSwitcher.setOnClickListener(this);
+		mMore = findViewById(R.id.more);
+		mMore.setOnClickListener(this);
+		mComboIcon = findViewById(R.id.iconcombo);
+		mComboIcon.setOnClickListener(this);
+		mTitleContainer = findViewById(R.id.title_bg);
+		setFocusState(false);
+		Resources res = getContext().getResources();
+		mStopDrawable = res.getDrawable(R.drawable.ic_stop_holo_dark);
+		mRefreshDrawable = res.getDrawable(R.drawable.ic_refresh_holo_dark);
+		mStopDescription = res.getString(R.string.accessibility_button_stop);
+		mRefreshDescription = res.getString(R.string.accessibility_button_refresh);
+		mTextfieldBgDrawable = res.getDrawable(R.drawable.textfield_active_holo_dark);
+		mUrlInput.setContainer(this);
+		mUrlInput.setStateListener(this);
+		mNeedsMenu = !ViewConfiguration.get(getContext()).hasPermanentMenuKey();
+		mIncognitoIcon = findViewById(R.id.incognito_icon);
+	}
 
-    @Override
-    public void onProgressStarted() {
-        super.onProgressStarted();
-        if (mStopButton.getDrawable() != mStopDrawable) {
-            mStopButton.setImageDrawable(mStopDrawable);
-            mStopButton.setContentDescription(mStopDescription);
-            if (mStopButton.getVisibility() != VISIBLE) {
-                mComboIcon.setVisibility(GONE);
-                mStopButton.setVisibility(VISIBLE);
-            }
-        }
-    }
+	@Override
+	public void onProgressStarted() {
+		super.onProgressStarted();
+		if (mStopButton.getDrawable() != mStopDrawable) {
+			mStopButton.setImageDrawable(mStopDrawable);
+			mStopButton.setContentDescription(mStopDescription);
+			if (mStopButton.getVisibility() != VISIBLE) {
+				mComboIcon.setVisibility(GONE);
+				mStopButton.setVisibility(VISIBLE);
+			}
+		}
+	}
 
-    @Override
-    public void onProgressStopped() {
-        super.onProgressStopped();
-        mStopButton.setImageDrawable(mRefreshDrawable);
-        mStopButton.setContentDescription(mRefreshDescription);
-        if (!isEditingUrl()) {
-            mComboIcon.setVisibility(VISIBLE);
-        }
-        onStateChanged(mUrlInput.getState());
-    }
+	@Override
+	public void onProgressStopped() {
+		super.onProgressStopped();
+		mStopButton.setImageDrawable(mRefreshDrawable);
+		mStopButton.setContentDescription(mRefreshDescription);
+		if (!isEditingUrl()) {
+			mComboIcon.setVisibility(VISIBLE);
+		}
+		onStateChanged(mUrlInput.getState());
+	}
 
-    /**
-     * Update the text displayed in the title bar.
-     *
-     * @param title String to display.  If null, the new tab string will be
-     *              shown.
-     */
-    @TargetApi(17)
-    @Override
-    void setDisplayTitle(String title) {
-        mUrlInput.setTag(title);
-        if (!isEditingUrl()) {
-            if (title == null) {
-                mUrlInput.setText(R.string.new_tab);
-            } else {
-                mUrlInput.setText(UrlUtils.stripUrl(title), false);
-            }
-            mUrlInput.setSelection(0);
-        }
-    }
+	/**
+	 * Update the text displayed in the title bar.
+	 *
+	 * @param title String to display.  If null, the new tab string will be shown.
+	 */
+	@TargetApi(17)
+	@Override
+	void setDisplayTitle(String title) {
+		mUrlInput.setTag(title);
+		if (!isEditingUrl()) {
+			if (title == null) {
+				mUrlInput.setText(R.string.new_tab);
+			} else {
+				mUrlInput.setText(UrlUtils.stripUrl(title), false);
+			}
+			mUrlInput.setSelection(0);
+		}
+	}
 
-    @Override
-    public void onClick(View v) {
-        if (v == mStopButton) {
-            if (mTitleBar.isInLoad()) {
-                mUiController.stopLoading();
-            } else {
-                WebView web = mBaseUi.getWebView();
-                if (web != null) {
-                    stopEditingUrl();
-                    web.reload();
-                }
-            }
-        } else if (v == mTabSwitcher) {
-            ((PhoneUi) mBaseUi).toggleNavScreen();
-        } else if (mMore == v) {
-            showMenu(mMore);
-        } else if (mClearButton == v) {
-            mUrlInput.setText("");
-        } else if (mComboIcon == v) {
-            mUiController.showPageInfo();
-        } else if (mVoiceButton == v) {
-            mUiController.startVoiceRecognizer();
-        } else {
-            super.onClick(v);
-        }
-    }
+	@Override
+	public void onClick(View v) {
+		if (v == mStopButton) {
+			if (mTitleBar.isInLoad()) {
+				mUiController.stopLoading();
+			} else {
+				WebView web = mBaseUi.getWebView();
+				if (web != null) {
+					stopEditingUrl();
+					web.reload();
+				}
+			}
+		} else if (v == mTabSwitcher) {
+			((PhoneUi) mBaseUi).toggleNavScreen();
+		} else if (mMore == v) {
+			showMenu(mMore);
+		} else if (mClearButton == v) {
+			mUrlInput.setText("");
+		} else if (mComboIcon == v) {
+			mUiController.showPageInfo();
+		} else if (mVoiceButton == v) {
+			mUiController.startVoiceRecognizer();
+		} else {
+			super.onClick(v);
+		}
+	}
 
-    @Override
-    public boolean isMenuShowing() {
-        return super.isMenuShowing() || mOverflowMenuShowing;
-    }
+	@Override
+	public boolean isMenuShowing() {
+		return super.isMenuShowing() || mOverflowMenuShowing;
+	}
 
-    void showMenu(View anchor) {
-        Activity activity = mUiController.getActivity();
-        if (mPopupMenu == null) {
-            mPopupMenu = new PopupMenu(getContext(), anchor);
-            mPopupMenu.setOnMenuItemClickListener(this);
-            mPopupMenu.setOnDismissListener(this);
-            if (!activity.onCreateOptionsMenu(mPopupMenu.getMenu())) {
-                mPopupMenu = null;
-                return;
-            }
-        }
-        Menu menu = mPopupMenu.getMenu();
-        if (activity.onPrepareOptionsMenu(menu)) {
-            mOverflowMenuShowing = true;
-            mPopupMenu.show();
-        }
-    }
+	void showMenu(View anchor) {
+		Activity activity = mUiController.getActivity();
+		if (mPopupMenu == null) {
+			mPopupMenu = new PopupMenu(getContext(), anchor);
+			mPopupMenu.setOnMenuItemClickListener(this);
+			mPopupMenu.setOnDismissListener(this);
+			if (!activity.onCreateOptionsMenu(mPopupMenu.getMenu())) {
+				mPopupMenu = null;
+				return;
+			}
+		}
+		Menu menu = mPopupMenu.getMenu();
+		if (activity.onPrepareOptionsMenu(menu)) {
+			mOverflowMenuShowing = true;
+			mPopupMenu.show();
+		}
+	}
 
-    @Override
-    public void onDismiss(PopupMenu menu) {
-        if (menu == mPopupMenu) {
-            onMenuHidden();
-        }
-    }
+	@Override
+	public void onDismiss(PopupMenu menu) {
+		if (menu == mPopupMenu) {
+			onMenuHidden();
+		}
+	}
 
-    private void onMenuHidden() {
-        mOverflowMenuShowing = false;
-        mBaseUi.showTitleBarForDuration();
-    }
+	private void onMenuHidden() {
+		mOverflowMenuShowing = false;
+		mBaseUi.showTitleBarForDuration();
+	}
 
-    @TargetApi(17)
-    @Override
-    public void onFocusChange(View view, boolean hasFocus) {
-        if (view == mUrlInput) {
-            if (hasFocus && !mUrlInput.getText().toString().equals(mUrlInput.getTag())) {
-                // only change text if different
-                mUrlInput.setText((String) mUrlInput.getTag(), false);
-                mUrlInput.selectAll();
-            } else {
-                setDisplayTitle(mUrlInput.getText().toString());
-            }
-        }
-        super.onFocusChange(view, hasFocus);
-    }
+	@TargetApi(17)
+	@Override
+	public void onFocusChange(View view, boolean hasFocus) {
+		if (view == mUrlInput) {
+			if (hasFocus && !mUrlInput.getText().toString().equals(mUrlInput.getTag())) {
+				// only change text if different
+				mUrlInput.setText((String) mUrlInput.getTag(), false);
+				mUrlInput.selectAll();
+			} else {
+				setDisplayTitle(mUrlInput.getText().toString());
+			}
+		}
+		super.onFocusChange(view, hasFocus);
+	}
 
-    @Override
-    public void onStateChanged(int state) {
-        mVoiceButton.setVisibility(GONE);
-        switch (state) {
-            case UrlInputView.StateListener.STATE_NORMAL:
-                mComboIcon.setVisibility(VISIBLE);
-                mStopButton.setVisibility(GONE);
-                mClearButton.setVisibility(GONE);
-                mMagnify.setVisibility(GONE);
-                mTabSwitcher.setVisibility(VISIBLE);
-                mTitleContainer.setBackgroundDrawable(null);
-                mMore.setVisibility(mNeedsMenu ? VISIBLE : GONE);
-                break;
-            case UrlInputView.StateListener.STATE_HIGHLIGHTED:
-                mComboIcon.setVisibility(GONE);
-                mStopButton.setVisibility(VISIBLE);
-                mClearButton.setVisibility(GONE);
-                if ((mUiController != null) && mUiController.supportsVoice()) {
-                    mVoiceButton.setVisibility(VISIBLE);
-                }
-                mMagnify.setVisibility(GONE);
-                mTabSwitcher.setVisibility(GONE);
-                mMore.setVisibility(GONE);
-                mTitleContainer.setBackgroundDrawable(mTextfieldBgDrawable);
-                break;
-            case UrlInputView.StateListener.STATE_EDITED:
-                mComboIcon.setVisibility(GONE);
-                mStopButton.setVisibility(GONE);
-                mClearButton.setVisibility(VISIBLE);
-                mMagnify.setVisibility(VISIBLE);
-                mTabSwitcher.setVisibility(GONE);
-                mMore.setVisibility(GONE);
-                mTitleContainer.setBackgroundDrawable(mTextfieldBgDrawable);
-                break;
-        }
-    }
+	@Override
+	public void onStateChanged(int state) {
+		mVoiceButton.setVisibility(GONE);
+		switch (state) {
+			case UrlInputView.StateListener.STATE_NORMAL:
+				mComboIcon.setVisibility(VISIBLE);
+				mStopButton.setVisibility(GONE);
+				mClearButton.setVisibility(GONE);
+				mMagnify.setVisibility(GONE);
+				mTabSwitcher.setVisibility(VISIBLE);
+				mTitleContainer.setBackgroundDrawable(null);
+				mMore.setVisibility(mNeedsMenu ? VISIBLE : GONE);
+				break;
+			case UrlInputView.StateListener.STATE_HIGHLIGHTED:
+				mComboIcon.setVisibility(GONE);
+				mStopButton.setVisibility(VISIBLE);
+				mClearButton.setVisibility(GONE);
+				if ((mUiController != null) && mUiController.supportsVoice()) {
+					mVoiceButton.setVisibility(VISIBLE);
+				}
+				mMagnify.setVisibility(GONE);
+				mTabSwitcher.setVisibility(GONE);
+				mMore.setVisibility(GONE);
+				mTitleContainer.setBackgroundDrawable(mTextfieldBgDrawable);
+				break;
+			case UrlInputView.StateListener.STATE_EDITED:
+				mComboIcon.setVisibility(GONE);
+				mStopButton.setVisibility(GONE);
+				mClearButton.setVisibility(VISIBLE);
+				mMagnify.setVisibility(VISIBLE);
+				mTabSwitcher.setVisibility(GONE);
+				mMore.setVisibility(GONE);
+				mTitleContainer.setBackgroundDrawable(mTextfieldBgDrawable);
+				break;
+		}
+	}
 
-    @Override
-    public void onTabDataChanged(Tab tab) {
-        super.onTabDataChanged(tab);
-        mIncognitoIcon.setVisibility(tab.isPrivateBrowsingEnabled() ? VISIBLE : GONE);
-    }
+	@Override
+	public void onTabDataChanged(Tab tab) {
+		super.onTabDataChanged(tab);
+		mIncognitoIcon.setVisibility(tab.isPrivateBrowsingEnabled() ? VISIBLE : GONE);
+	}
 
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        return mUiController.onOptionsItemSelected(item);
-    }
-
+	@Override
+	public boolean onMenuItemClick(MenuItem item) {
+		return mUiController.onOptionsItemSelected(item);
+	}
 }

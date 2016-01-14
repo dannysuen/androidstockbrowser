@@ -24,20 +24,20 @@
               android:orientation="vertical">
 
     <ListView
-        android:id="@android:id/list"
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="1"
-        android:cacheColorHint="@android:color/transparent"
-        android:clipToPadding="false"
-        android:drawSelectorOnTop="false"
-        android:scrollbarAlwaysDrawVerticalTrack="true"/>
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:cacheColorHint="@android:color/transparent"
+            android:clipToPadding="false"
+            android:drawSelectorOnTop="false"
+            android:scrollbarAlwaysDrawVerticalTrack="true"/>
 
     <Button
-        android:id="@+id/clear_all_button"
-        android:layout_width="150dip"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dip"
-        android:text="@string/website_settings_clear_all"
-        android:visibility="gone"/>
+            android:id="@+id/clear_all_button"
+            android:layout_width="150dip"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip"
+            android:text="@string/website_settings_clear_all"
+            android:visibility="gone"/>
 </LinearLayout>

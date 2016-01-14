@@ -15,15 +15,15 @@
 -->
 
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
+        xmlns:android="http://schemas.android.com/apk/res/android">
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="enable_quick_controls"
-        android:summary="@string/pref_lab_quick_controls_summary"
-        android:title="@string/pref_lab_quick_controls"/>
+            android:defaultValue="false"
+            android:key="enable_quick_controls"
+            android:summary="@string/pref_lab_quick_controls_summary"
+            android:title="@string/pref_lab_quick_controls"/>
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="fullscreen"
-        android:summary="@string/pref_lab_fullscreen_summary"
-        android:title="@string/pref_lab_fullscreen"/>
+            android:defaultValue="false"
+            android:key="fullscreen"
+            android:summary="@string/pref_lab_fullscreen_summary"
+            android:title="@string/pref_lab_fullscreen"/>
 </PreferenceScreen>

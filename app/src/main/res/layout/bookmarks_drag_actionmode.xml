@@ -15,37 +15,37 @@
 -->
 
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:divider="?android:attr/dividerVertical"
-    android:dividerPadding="12dp"
-    android:gravity="right"
-    android:minHeight="?android:attr/actionBarSize"
-    android:orientation="horizontal"
-    android:showDividers="middle">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="?android:attr/dividerVertical"
+        android:dividerPadding="12dp"
+        android:gravity="right"
+        android:minHeight="?android:attr/actionBarSize"
+        android:orientation="horizontal"
+        android:showDividers="middle">
 
     <ImageView
-        android:id="@+id/open_context_menu_id"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:paddingLeft="16dip"
-        android:paddingRight="16dip"
-        android:src="@drawable/ic_web_holo_dark"/>
+            android:id="@+id/open_context_menu_id"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="16dip"
+            android:paddingRight="16dip"
+            android:src="@drawable/ic_web_holo_dark"/>
 
     <ImageView
-        android:id="@+id/new_window_context_menu_id"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:paddingLeft="16dip"
-        android:paddingRight="16dip"
-        android:src="@drawable/ic_new_window_holo_dark"/>
+            android:id="@+id/new_window_context_menu_id"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="16dip"
+            android:paddingRight="16dip"
+            android:src="@drawable/ic_new_window_holo_dark"/>
 
     <ImageView
-        android:id="@+id/info"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:paddingLeft="16dip"
-        android:paddingRight="16dip"
-        android:src="@drawable/ic_home_info_holo_dark"/>
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="16dip"
+            android:paddingRight="16dip"
+            android:src="@drawable/ic_home_info_holo_dark"/>
 </LinearLayout>

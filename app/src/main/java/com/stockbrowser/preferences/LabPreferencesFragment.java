@@ -16,17 +16,17 @@
 
 package com.stockbrowser.preferences;
 
+import com.android.browser.R;
+
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 
-import com.android.browser.R;
-
 public class LabPreferencesFragment extends PreferenceFragment {
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // Load the XML preferences file
-        addPreferencesFromResource(R.xml.lab_preferences);
-    }
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		// Load the XML preferences file
+		addPreferencesFromResource(R.xml.lab_preferences);
+	}
 }

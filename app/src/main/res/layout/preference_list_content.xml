@@ -17,80 +17,80 @@
               android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/headers"
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="32dp"
-            android:layout_marginLeft="@dimen/preference_screen_side_margin"
-            android:layout_marginRight="@dimen/preference_screen_side_margin_negative"
-            android:layout_marginTop="32dp"
-            android:layout_weight="10"
-            android:orientation="vertical">
+                android:id="@+id/headers"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="32dp"
+                android:layout_marginLeft="@dimen/preference_screen_side_margin"
+                android:layout_marginRight="@dimen/preference_screen_side_margin_negative"
+                android:layout_marginTop="32dp"
+                android:layout_weight="10"
+                android:orientation="vertical">
 
             <ListView
-                android:id="@android:id/list"
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1"
-                android:cacheColorHint="@android:color/transparent"
-                android:drawSelectorOnTop="false"
-                android:listPreferredItemHeight="48dp"
-                android:scrollbarAlwaysDrawVerticalTrack="true"/>
+                    android:id="@android:id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="0px"
+                    android:layout_weight="1"
+                    android:cacheColorHint="@android:color/transparent"
+                    android:drawSelectorOnTop="false"
+                    android:listPreferredItemHeight="48dp"
+                    android:scrollbarAlwaysDrawVerticalTrack="true"/>
 
             <FrameLayout
-                android:id="@+id/list_footer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"/>
+                    android:id="@+id/list_footer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"/>
 
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/prefs_frame"
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="@dimen/preference_screen_side_margin"
-            android:layout_marginRight="@dimen/preference_screen_side_margin"
-            android:layout_marginTop="16dp"
-            android:layout_weight="20"
-            android:background="?android:attr/detailsElementBackground"
-            android:orientation="vertical"
-            android:visibility="gone">
+                android:id="@+id/prefs_frame"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="@dimen/preference_screen_side_margin"
+                android:layout_marginRight="@dimen/preference_screen_side_margin"
+                android:layout_marginTop="16dp"
+                android:layout_weight="20"
+                android:background="?android:attr/detailsElementBackground"
+                android:orientation="vertical"
+                android:visibility="gone">
 
             <!-- Breadcrumb inserted here -->
             <android.app.FragmentBreadCrumbs
-                android:id="@android:id/title"
-                android:layout_width="match_parent"
-                android:layout_height="72dip"
-                android:layout_marginLeft="48dip"
-                android:layout_marginRight="48dip"
-                android:gravity="center_vertical|left"
-                android:paddingBottom="8dip"
-                android:paddingTop="16dip"
-                />
+                    android:id="@android:id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dip"
+                    android:layout_marginLeft="48dip"
+                    android:layout_marginRight="48dip"
+                    android:gravity="center_vertical|left"
+                    android:paddingBottom="8dip"
+                    android:paddingTop="16dip"
+                    />
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="1dip"
-                android:paddingLeft="32dip"
-                android:paddingRight="32dip"
-                android:src="#404040"
-                />
+                    android:layout_width="match_parent"
+                    android:layout_height="1dip"
+                    android:paddingLeft="32dip"
+                    android:paddingRight="32dip"
+                    android:src="#404040"
+                    />
 
             <android.preference.PreferenceFrameLayout
-                android:id="@+id/prefs"
-                android:layout_width="match_parent"
-                android:layout_height="0dip"
-                android:layout_marginTop="-1dip"
-                android:layout_weight="1"
-                />
+                    android:id="@+id/prefs"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dip"
+                    android:layout_marginTop="-1dip"
+                    android:layout_weight="1"
+                    />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

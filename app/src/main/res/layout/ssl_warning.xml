@@ -15,17 +15,17 @@
 -->
 
 <TextView
-    android:id="@+id/warning"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="4dip"
-    android:layout_marginLeft="12dip"
-    android:layout_marginRight="12dip"
-    android:layout_marginTop="4dip"
-    android:drawableLeft="@drawable/ic_dialog_browser_security_bad"
-    android:drawablePadding="6dip"
-    android:gravity="center_vertical"
-    android:minHeight="32dip"
-    android:textAppearance="?android:attr/textAppearanceSmall"/>
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dip"
+        android:layout_marginLeft="12dip"
+        android:layout_marginRight="12dip"
+        android:layout_marginTop="4dip"
+        android:drawableLeft="@drawable/ic_dialog_browser_security_bad"
+        android:drawablePadding="6dip"
+        android:gravity="center_vertical"
+        android:minHeight="32dip"
+        android:textAppearance="?android:attr/textAppearanceSmall"/>
 

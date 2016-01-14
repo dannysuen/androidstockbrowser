@@ -19,4 +19,4 @@
         android:layout_height="wrap_content"
         android:maxLines="2"
         android:text="@string/import_bookmarks_dialog_remove"
-    />
+        />

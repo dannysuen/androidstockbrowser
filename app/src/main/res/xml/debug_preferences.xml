@@ -15,80 +15,80 @@
 -->
 
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
     <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="enable_hardware_accel"
-        android:title="@string/pref_development_hardware_accel"/>
+            android:defaultValue="true"
+            android:key="enable_hardware_accel"
+            android:title="@string/pref_development_hardware_accel"/>
 
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:enabled="false"
-        android:key="enable_hardware_accel_skia"
-        android:title="@string/pref_development_hardware_accel_skia"/>
+            android:defaultValue="false"
+            android:enabled="false"
+            android:key="enable_hardware_accel_skia"
+            android:title="@string/pref_development_hardware_accel_skia"/>
 
     <ListPreference
-        android:defaultValue="0"
-        android:entries="@array/pref_development_ua_choices"
-        android:entryValues="@array/pref_development_ua_values"
-        android:key="user_agent"
-        android:title="@string/pref_development_uastring"/>
+            android:defaultValue="0"
+            android:entries="@array/pref_development_ua_choices"
+            android:entryValues="@array/pref_development_ua_values"
+            android:key="user_agent"
+            android:title="@string/pref_development_uastring"/>
 
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="enable_visual_indicator"
-        android:title="@string/pref_development_visual_indicator"/>
+            android:defaultValue="false"
+            android:key="enable_visual_indicator"
+            android:title="@string/pref_development_visual_indicator"/>
 
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="enable_cpu_upload_path"
-        android:title="@string/pref_development_cpu_upload_path"/>
+            android:defaultValue="false"
+            android:key="enable_cpu_upload_path"
+            android:title="@string/pref_development_cpu_upload_path"/>
 
     <!-- The javascript console is enabled by default when the user has
          also enabled debug mode by navigating to about:debug. -->
     <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="javascript_console"
-        android:title="@string/pref_development_error_console"/>
+            android:defaultValue="true"
+            android:key="javascript_console"
+            android:title="@string/pref_development_error_console"/>
 
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="small_screen"
-        android:title="@string/pref_development_single_column_rendering"/>
+            android:defaultValue="false"
+            android:key="small_screen"
+            android:title="@string/pref_development_single_column_rendering"/>
 
     <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="wide_viewport"
-        android:title="@string/pref_development_viewport"/>
+            android:defaultValue="true"
+            android:key="wide_viewport"
+            android:title="@string/pref_development_viewport"/>
 
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="normal_layout"
-        android:title="@string/pref_development_normal_rendering"/>
+            android:defaultValue="false"
+            android:key="normal_layout"
+            android:title="@string/pref_development_normal_rendering"/>
 
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="enable_tracing"
-        android:title="@string/pref_development_trace"/>
+            android:defaultValue="false"
+            android:key="enable_tracing"
+            android:title="@string/pref_development_trace"/>
 
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="enable_light_touch"
-        android:title="Enable light touch"/>
+            android:defaultValue="false"
+            android:key="enable_light_touch"
+            android:title="Enable light touch"/>
 
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="enable_nav_dump"
-        android:title="@string/pref_development_nav_dump"/>
+            android:defaultValue="false"
+            android:key="enable_nav_dump"
+            android:title="@string/pref_development_nav_dump"/>
 
     <EditTextPreference
-        android:key="js_engine_flags"
-        android:singleLine="true"
-        android:title="@string/js_engine_flags"/>
+            android:key="js_engine_flags"
+            android:singleLine="true"
+            android:title="@string/js_engine_flags"/>
 
     <Preference
-        android:key="reset_prelogin"
-        android:title="@string/pref_development_reset_prelogin"/>
+            android:key="reset_prelogin"
+            android:title="@string/pref_development_reset_prelogin"/>
 
 </PreferenceScreen>

@@ -15,54 +15,54 @@
 -->
 
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
     <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="force_userscalable"
-        android:summary="@string/pref_force_userscalable_summary"
-        android:title="@string/pref_force_userscalable"/>
+            android:defaultValue="false"
+            android:key="force_userscalable"
+            android:summary="@string/pref_force_userscalable_summary"
+            android:title="@string/pref_force_userscalable"/>
 
     <PreferenceCategory android:title="@string/pref_font_size_category">
         <com.stockbrowser.preferences.FontSizePreview
-            android:title="@string/preview"/>
+                android:title="@string/preview"/>
 
         <com.stockbrowser.preferences.SeekBarSummaryPreference
-            android:defaultValue="10"
-            android:key="text_zoom"
-            android:max="30"
-            android:title="@string/pref_text_zoom"/>
+                android:defaultValue="10"
+                android:key="text_zoom"
+                android:max="30"
+                android:title="@string/pref_text_zoom"/>
 
         <com.stockbrowser.preferences.SeekBarSummaryPreference
-            android:defaultValue="5"
-            android:key="double_tap_zoom"
-            android:max="10"
-            android:title="@string/pref_zoom_on_double_tap"/>
+                android:defaultValue="5"
+                android:key="double_tap_zoom"
+                android:max="10"
+                android:title="@string/pref_zoom_on_double_tap"/>
 
         <com.stockbrowser.preferences.SeekBarSummaryPreference
-            android:defaultValue="0"
-            android:key="min_font_size"
-            android:max="20"
-            android:title="@string/pref_min_font_size"/>
+                android:defaultValue="0"
+                android:key="min_font_size"
+                android:max="20"
+                android:title="@string/pref_min_font_size"/>
 
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/pref_inverted_category">
         <com.stockbrowser.preferences.InvertedContrastPreview
-            android:title="@string/preview"/>
+                android:title="@string/preview"/>
 
         <CheckBoxPreference
-            android:defaultValue="false"
-            android:key="inverted"
-            android:summary="@string/pref_inverted_summary"
-            android:title="@string/pref_inverted"/>
+                android:defaultValue="false"
+                android:key="inverted"
+                android:summary="@string/pref_inverted_summary"
+                android:title="@string/pref_inverted"/>
 
         <com.stockbrowser.preferences.SeekBarSummaryPreference
-            android:defaultValue="0"
-            android:dependency="inverted"
-            android:key="inverted_contrast"
-            android:max="20"
-            android:title="@string/pref_inverted_contrast"/>
+                android:defaultValue="0"
+                android:dependency="inverted"
+                android:key="inverted_contrast"
+                android:max="20"
+                android:title="@string/pref_inverted_contrast"/>
 
     </PreferenceCategory>
 

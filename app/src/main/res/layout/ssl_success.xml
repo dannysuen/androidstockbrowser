@@ -22,23 +22,23 @@
     <TableRow>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dip"
-            android:layout_marginLeft="20dip"
-            android:scaleType="center"
-            android:src="@drawable/ic_dialog_browser_security_good"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dip"
+                android:layout_marginLeft="20dip"
+                android:scaleType="center"
+                android:src="@drawable/ic_dialog_browser_security_good"/>
 
         <TextView
-            android:id="@+id/success"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dip"
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="20dip"
-            android:layout_weight="1"
-            android:gravity="left"
-            android:textAppearance="?android:attr/textAppearanceLarge"/>
+                android:id="@+id/success"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="20dip"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:textAppearance="?android:attr/textAppearanceLarge"/>
     </TableRow>
 
 </TableLayout>

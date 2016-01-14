@@ -17,76 +17,75 @@
 
 package com.stockbrowser;
 
+import com.android.browser.R;
+
 import android.content.Context;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-
-import com.android.browser.R;
 
 /**
  * Layout representing a history item in the classic history viewer.
  */
 /* package */ class HistoryItem extends BookmarkItem
-        implements OnCheckedChangeListener {
+		implements OnCheckedChangeListener {
 
-    private CompoundButton mStar;      // Star for bookmarking
+	private CompoundButton mStar;      // Star for bookmarking
 
-    /**
-     * Create a new HistoryItem.
-     *
-     * @param context Context for this HistoryItem.
-     */
-    /* package */ HistoryItem(Context context) {
-        this(context, true);
-    }
+	/**
+	 * Create a new HistoryItem.
+	 *
+	 * @param context Context for this HistoryItem.
+	 */
+	/* package */ HistoryItem(Context context) {
+		this(context, true);
+	}
 
-    /* package */ HistoryItem(Context context, boolean showStar) {
-        super(context);
+	/* package */ HistoryItem(Context context, boolean showStar) {
+		super(context);
 
-        mStar = (CompoundButton) findViewById(R.id.star);
-        mStar.setOnCheckedChangeListener(this);
-        if (showStar) {
-            mStar.setVisibility(VISIBLE);
-        } else {
-            mStar.setVisibility(GONE);
-        }
-    }
+		mStar = (CompoundButton) findViewById(R.id.star);
+		mStar.setOnCheckedChangeListener(this);
+		if (showStar) {
+			mStar.setVisibility(VISIBLE);
+		} else {
+			mStar.setVisibility(GONE);
+		}
+	}
 
-    /* package */ void copyTo(HistoryItem item) {
-        item.mTextView.setText(mTextView.getText());
-        item.mUrlText.setText(mUrlText.getText());
-        item.setIsBookmark(mStar.isChecked());
-        item.mImageView.setImageDrawable(mImageView.getDrawable());
-    }
+	/* package */ void copyTo(HistoryItem item) {
+		item.mTextView.setText(mTextView.getText());
+		item.mUrlText.setText(mUrlText.getText());
+		item.setIsBookmark(mStar.isChecked());
+		item.mImageView.setImageDrawable(mImageView.getDrawable());
+	}
 
-    /**
-     * Whether or not this item represents a bookmarked site
-     */
+	/**
+	 * Whether or not this item represents a bookmarked site
+	 */
     /* package */ boolean isBookmark() {
-        return mStar.isChecked();
-    }
+		return mStar.isChecked();
+	}
 
-    /**
-     * Set whether or not this represents a bookmark, and make sure the star
-     * behaves appropriately.
-     */
+	/**
+	 * Set whether or not this represents a bookmark, and make sure the star behaves appropriately.
+	 */
     /* package */ void setIsBookmark(boolean isBookmark) {
-        mStar.setOnCheckedChangeListener(null);
-        mStar.setChecked(isBookmark);
-        mStar.setOnCheckedChangeListener(this);
-    }
+		mStar.setOnCheckedChangeListener(null);
+		mStar.setChecked(isBookmark);
+		mStar.setOnCheckedChangeListener(this);
+	}
 
-    @Override
-    public void onCheckedChanged(CompoundButton buttonView,
-                                 boolean isChecked) {
-        if (isChecked) {
-            // Uncheck ourseves. When the bookmark is actually added,
-            // we will be notified
-            setIsBookmark(false);
-            com.stockbrowser.compats.Browser.saveBookmark(getContext(), getName(), mUrl);
-        } else {
-            Bookmarks.removeFromBookmarks(getContext(),
-                    getContext().getContentResolver(), mUrl, getName());
-        }
-    }
+	@Override
+	public void onCheckedChanged(CompoundButton buttonView,
+								 boolean isChecked) {
+		if (isChecked) {
+			// Uncheck ourseves. When the bookmark is actually added,
+			// we will be notified
+			setIsBookmark(false);
+			com.stockbrowser.compats.Browser.saveBookmark(getContext(), getName(), mUrl);
+		} else {
+			Bookmarks.removeFromBookmarks(getContext(),
+					getContext().getContentResolver(), mUrl, getName());
+		}
+	}
 }

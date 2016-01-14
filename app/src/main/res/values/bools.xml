@@ -11,7 +11,7 @@
     License.
 -->
 <resources
-    >
+        >
     <bool name="isTablet">false</bool>
     <!--  hide the title bar -->
     <bool name="hide_title">true</bool>

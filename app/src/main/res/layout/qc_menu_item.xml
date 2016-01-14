@@ -15,16 +15,16 @@
 -->
 
 <TextView
-    android:id="@+id/title"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="@dimen/menu_width"
-    android:layout_height="@dimen/menu_height"
-    android:background="@drawable/qc_menu_selector"
-    android:gravity="center_vertical"
-    android:minHeight="44dip"
-    android:paddingBottom="4dip"
-    android:paddingLeft="8dip"
-    android:paddingRight="8dip"
-    android:paddingTop="4dip"
-    android:textAppearance="?android:attr/textAppearanceMedium"
-    />
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/title"
+        android:layout_width="@dimen/menu_width"
+        android:layout_height="@dimen/menu_height"
+        android:background="@drawable/qc_menu_selector"
+        android:gravity="center_vertical"
+        android:minHeight="44dip"
+        android:paddingBottom="4dip"
+        android:paddingLeft="8dip"
+        android:paddingRight="8dip"
+        android:paddingTop="4dip"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        />

@@ -22,24 +22,23 @@ import android.webkit.CookieSyncManager;
 
 public class Browser extends Application {
 
-    // Set to true to enable verbose logging.
-    final static boolean LOGV_ENABLED = true;
-    // Set to true to enable extra debug logging.
-    final static boolean LOGD_ENABLED = true;
-    private final static String LOGTAG = "browser";
+	// Set to true to enable verbose logging.
+	final static boolean LOGV_ENABLED = true;
+	// Set to true to enable extra debug logging.
+	final static boolean LOGD_ENABLED = true;
+	private final static String LOGTAG = "browser";
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
+	@Override
+	public void onCreate() {
+		super.onCreate();
 
-        if (LOGV_ENABLED)
-            Log.v(LOGTAG, "Browser.onCreate: this=" + this);
+		if (LOGV_ENABLED)
+			Log.v(LOGTAG, "Browser.onCreate: this=" + this);
 
-        // create CookieSyncManager with current Context
-        CookieSyncManager.createInstance(this);
-        BrowserSettings.initialize(getApplicationContext());
-        Preloader.initialize(getApplicationContext());
-    }
-
+		// create CookieSyncManager with current Context
+		CookieSyncManager.createInstance(this);
+		BrowserSettings.initialize(getApplicationContext());
+		Preloader.initialize(getApplicationContext());
+	}
 }
 

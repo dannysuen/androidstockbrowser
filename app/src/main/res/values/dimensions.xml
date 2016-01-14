@@ -11,7 +11,7 @@
     License.
 -->
 <resources
-    >
+        >
     <dimen name="tab_width">180dp</dimen>
     <dimen name="tab_height">44dp</dimen>
     <dimen name="tab_overlap">8dp</dimen>

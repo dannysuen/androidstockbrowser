@@ -11,7 +11,7 @@
     License.
 -->
 <resources
-    >
+        >
     <!-- The number of lines in the suggestions dropdown in landscape -->
     <integer name="max_suggest_lines_landscape">5</integer>
     <!-- The number of lines in the suggestions dropdown in portrait -->

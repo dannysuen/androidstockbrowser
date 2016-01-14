@@ -17,73 +17,73 @@
 -->
 
 <com.stockbrowser.GeolocationPermissionsPrompt
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/geolocation_permissions_prompt_background"
-    android:visibility="gone">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/geolocation_permissions_prompt_background"
+        android:visibility="gone">
 
     <!-- 'google.com wants to know your location' -->
     <TextView
-        android:id="@+id/message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="6dip"
-        android:scrollHorizontally="true"
-        android:singleLine="true"
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
-
-    <CheckBox
-        android:id="@+id/remember"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/message"
-        android:layout_below="@id/message"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/remember"
-        android:layout_toRightOf="@id/remember"
-        android:paddingLeft="4dip"
-        android:text="@string/geolocation_permissions_prompt_remember"
-        android:textAppearance="?android:attr/textAppearanceSmall"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/remember"
-        android:background="@null"
-        android:divider="?android:attr/dividerHorizontal"
-        android:dividerPadding="16dip"
-        android:orientation="vertical"
-        android:showDividers="beginning">
-
-        <LinearLayout
-            style="?android:attr/buttonBarStyle"
+            android:id="@+id/message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="6dip"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+    <CheckBox
+            android:id="@+id/remember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/message"
+            android:layout_below="@id/message"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/remember"
+            android:layout_toRightOf="@id/remember"
+            android:paddingLeft="4dip"
+            android:text="@string/geolocation_permissions_prompt_remember"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/remember"
             android:background="@null"
-            android:measureWithLargestChild="true"
-            android:orientation="horizontal"
-            android:paddingLeft="2dip"
-            android:paddingRight="2dip">
+            android:divider="?android:attr/dividerHorizontal"
+            android:dividerPadding="16dip"
+            android:orientation="vertical"
+            android:showDividers="beginning">
+
+        <LinearLayout
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:measureWithLargestChild="true"
+                android:orientation="horizontal"
+                android:paddingLeft="2dip"
+                android:paddingRight="2dip">
 
             <Button
-                android:id="@+id/dont_share_button"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/geolocation_permissions_prompt_dont_share"/>
+                    android:id="@+id/dont_share_button"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/geolocation_permissions_prompt_dont_share"/>
 
             <Button
-                android:id="@+id/share_button"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/geolocation_permissions_prompt_share"/>
+                    android:id="@+id/share_button"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/geolocation_permissions_prompt_share"/>
         </LinearLayout>
     </LinearLayout>
 

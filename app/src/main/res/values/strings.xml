@@ -41,7 +41,10 @@
     <!-- Sign-in dialog -->
     <!-- This is used as the title of a dialog which is used to sign in to a secure site.
             "%s1"is replaced with the host and "%s2" with realm -->
-    <string name="sign_in_to">Sign in to <xliff:g id="hostname">%s1</xliff:g> \"<xliff:g id="realm">%s2</xliff:g>\"</string>
+    <string name="sign_in_to">Sign in to
+        <xliff:g id="hostname">%s1</xliff:g>
+        \"<xliff:g id="realm">%s2</xliff:g>\"
+    </string>
     <!-- Prompt for an input box that allows the user to enter their login name -->
     <string name="username">Name</string>
     <!-- Prompt for an input box that allows the user to enter their password -->
@@ -71,7 +74,9 @@
     <string name="page_info_address">Address:</string>
 
     <!-- SSL Error dialogs -->
-    <string name="ssl_warnings_header">There are problems with the security certificate for this site.</string>
+    <string name="ssl_warnings_header">There are problems with the security certificate for this
+        site.
+    </string>
     <!-- Label for a button on an SSL error dialog that lets the user continue
             and view the page despite the error -->
     <string name="ssl_continue">Continue</string>
@@ -87,7 +92,8 @@
     <!-- Message in an SSL Error dialog -->
     <string name="ssl_untrusted">This certificate isn\'t from a trusted authority.</string>
     <!-- Message in an SSL Error dialog -->
-    <string name="ssl_mismatch">The name of the site doesn\'t match the name on the certificate.</string>
+    <string name="ssl_mismatch">The name of the site doesn\'t match the name on the certificate.
+    </string>
     <!-- Message in an SSL Error dialog -->
     <string name="ssl_expired">This certificate has expired.</string>
     <!-- Message in an SSL Error dialog -->
@@ -192,7 +198,8 @@
     <string name="current_page">from\u0020</string>
     <!-- Confirmation dialog message confirming that the user wishes to delete
             the bookmark they selected for deletion -->
-    <string name="delete_bookmark_warning">Delete bookmark \"<xliff:g id="bookmark">%s</xliff:g>\"?</string>
+    <string name="delete_bookmark_warning">Delete bookmark \"<xliff:g id="bookmark">%s</xliff:g>\"?
+    </string>
     <!-- Context menu item to open every bookmark in a folder in new tabs [CHAR LIMIT=50] -->
     <string name="open_all_in_new_window">Open all in new tabs</string>
     <!-- Menu item to open a dialog which allows the user to enter a url or do search-->
@@ -224,7 +231,10 @@
     <!-- Toast informing the user that saving the page for offline reading has failed. [CHAR LIMIT=50] -->
     <string name="snapshot_failed">Couldn\'t save for offline reading.</string>
     <!-- The number of bookmarks in a folder [CHAR LIMT=50] -->
-    <string name="contextheader_folder_bookmarkcount"><xliff:g id="bookmark_count">%d</xliff:g> bookmarks</string>
+    <string name="contextheader_folder_bookmarkcount">
+        <xliff:g id="bookmark_count">%d</xliff:g>
+        bookmarks
+    </string>
     <!-- No bookmarks in the folder [CHAR LIMIT=50] -->
     <string name="contextheader_folder_empty">Empty folder</string>
     <!-- Context Menu item open the currently selected link in the current
@@ -314,7 +324,8 @@
         <item>OFF</item>
     </string-array>
     <!-- Settings summary [CHAR LIMIT=50]-->
-    <string name="pref_content_open_in_background_summary">Open new tabs behind the current tab</string>
+    <string name="pref_content_open_in_background_summary">Open new tabs behind the current tab
+    </string>
     <!-- Settings label [CHAR LIMIT=50] -->
     <string name="pref_content_homepage">Set homepage</string>
     <!-- Settings label -->
@@ -362,12 +373,15 @@
     <!-- Label for option that when clicked opens the AutoFill settings screen. Also used as the title of that AutoFill Settings screen. [CHAR-LIMIT=32] -->
     <string name="pref_autofill_profile_editor">Auto-fill text</string>
     <!-- Summary for the AutoFill Settings preference [CHAR-LIMIT=none] -->
-    <string name="pref_autofill_profile_editor_summary">Set up text to auto-fill in web forms</string>
+    <string name="pref_autofill_profile_editor_summary">Set up text to auto-fill in web forms
+    </string>
 
     <!-- Auto login preference title [CHAR-LIMIT=32] -->
     <string name="pref_autologin_title">Automatic Google signin</string>
     <!-- Message shown during auto login [CHAR-LIMIT=none] -->
-    <string name="pref_autologin_progress">Signing into Google sites using <xliff:g>%s</xliff:g></string>
+    <string name="pref_autologin_progress">Signing into Google sites using
+        <xliff:g>%s</xliff:g>
+    </string>
     <!-- Auto-login bar description [CHAR-LIMIT=40] -->
     <string name="autologin_bar_text">Sign in as</string>
     <!-- Login button [CHAR-LIMIT=10] -->
@@ -378,7 +392,9 @@
     <string name="autologin_bar_error">Couldn\'t sign in.</string>
 
     <!-- Heading for the AutoFill profile editor to tell the user what AutoFill does and why they should fill out the profile. [CHAR-LIMIT=None] -->
-    <string name="autofill_profile_editor_heading">Type the text you want to auto-fill in web forms.</string>
+    <string name="autofill_profile_editor_heading">Type the text you want to auto-fill in web
+        forms.
+    </string>
     <!-- String for the user's full name in the AutoFill profile editor. [CHAR-LIMIT=32] -->
     <string name="autofill_profile_editor_name">Full name:</string>
     <!-- String for the user's e-mail address in the AutoFill profile editor. [CHAR-LIMIT=32] -->
@@ -388,11 +404,14 @@
     <!-- String for the first line of the user's address in the AutoFill profile editor. [CHAR-LIMIT=32] -->
     <string name="autofill_profile_editor_address_line_1">Address line 1:</string>
     <!-- String to suggest to the user the kind of data to be used for the first line of the address. CHAR-LIMIT=64] -->
-    <string name="autofill_profile_editor_address_line_1_hint">Street address, P.O. box, c/o</string>
+    <string name="autofill_profile_editor_address_line_1_hint">Street address, P.O. box, c/o
+    </string>
     <!-- String for the second line of the user's address in the AutoFill profile editor. [CHAR-LIMIT=32] -->
     <string name="autofill_profile_editor_address_line_2">Address line 2:</string>
     <!-- String to suggest to the user the kind of data to be used for the second line of the address. CHAR-LIMIT=64] -->
-    <string name="autofill_profile_editor_address_line_2_hint">Apartment, suite, unit, building, floor, etc.</string>
+    <string name="autofill_profile_editor_address_line_2_hint">Apartment, suite, unit, building,
+        floor, etc.
+    </string>
     <!-- String for the user's city or town in the AutoFill profile editor. [CHAR-LIMIT=32] -->
     <string name="autofill_profile_editor_city">City/Town:</string>
     <!-- String for the user's state or province or region in the AutoFill profile editor. [CHAR-LIMIT=32] -->
@@ -416,10 +435,14 @@
     <string name="autofill_profile_editor_delete_profile">Delete</string>
 
     <!-- Text on a dialog shown to the user when they are prompted to set up the autofill feature [CHAR-LIMIT=NONE] -->
-    <string name="autofill_setup_dialog_message">The browser can automatically complete web forms like this one. Do you want to set up your auto-fill text?</string>
+    <string name="autofill_setup_dialog_message">The browser can automatically complete web forms
+        like this one. Do you want to set up your auto-fill text?
+    </string>
     <!-- Toast message displayed when the user decides to not set up autofill at this time. We want to remind them that they can configure
          it through the Browser Settings menu. [CHAR-LIMIT=NONE] -->
-    <string name="autofill_setup_dialog_negative_toast">You can always set up your auto-fill text from the Browser &gt; Settings &gt; General screen.</string>
+    <string name="autofill_setup_dialog_negative_toast">You can always set up your auto-fill text
+        from the Browser &gt; Settings &gt; General screen.
+    </string>
     <!-- Text on a checkbox in the "setup autofill" dialog which is shown to the user when they are prompted to set up the autofill feature.
          The checkbox allows them to specify they would like to disable the feature altogether [CHAR-LIMIT=NONE] -->
     <string name="disable_autofill">Disable auto-fill</string>
@@ -429,9 +452,11 @@
     <!-- Settings label -->
     <string name="pref_privacy_clear_cache">Clear cache</string>
     <!-- Settings summary -->
-    <string name="pref_privacy_clear_cache_summary">Clear locally cached content and databases</string>
+    <string name="pref_privacy_clear_cache_summary">Clear locally cached content and databases
+    </string>
     <!-- Confirmation dialog message -->
-    <string name="pref_privacy_clear_cache_dlg">Delete locally cached content and databases?</string>
+    <string name="pref_privacy_clear_cache_dlg">Delete locally cached content and databases?
+    </string>
     <!-- Cookie settings category [CHAR-LIMIT=50] -->
     <string name="pref_privacy_cookies_title">Cookies</string>
     <!-- Settings label -->
@@ -465,11 +490,15 @@
     <!-- Settings label -->
     <string name="pref_privacy_enable_geolocation">Enable location</string>
     <!-- Settings summary -->
-    <string name="pref_privacy_enable_geolocation_summary">Allow sites to request access to your location</string>
+    <string name="pref_privacy_enable_geolocation_summary">Allow sites to request access to your
+        location
+    </string>
     <!-- Settings label -->
     <string name="pref_privacy_clear_geolocation_access">Clear location access</string>
     <!-- Settings summary -->
-    <string name="pref_privacy_clear_geolocation_access_summary">Clear location access for all websites</string>
+    <string name="pref_privacy_clear_geolocation_access_summary">Clear location access for all
+        websites
+    </string>
     <!-- Confirmation dialog message -->
     <string name="pref_privacy_clear_geolocation_access_dlg">Clear website location access?</string>
     <!-- Passwords settings category [CHAR-LIMIT=50] -->
@@ -477,19 +506,26 @@
     <!-- Settings label -->
     <string name="pref_security_remember_passwords">Remember passwords</string>
     <!-- Settings summary -->
-    <string name="pref_security_remember_passwords_summary">Save usernames and passwords for websites</string>
+    <string name="pref_security_remember_passwords_summary">Save usernames and passwords for
+        websites
+    </string>
     <!-- Settings label -->
     <string name="pref_security_save_form_data">Remember form data</string>
     <!-- Settings summary -->
-    <string name="pref_security_save_form_data_summary">Remember data I type in forms for later use</string>
+    <string name="pref_security_save_form_data_summary">Remember data I type in forms for later
+        use
+    </string>
     <!-- Settings label -->
     <string name="pref_security_show_security_warning">Show security warnings</string>
     <!-- Settings summmary -->
-    <string name="pref_security_show_security_warning_summary">Show warning if there\'s a problem with a site\'s security</string>
+    <string name="pref_security_show_security_warning_summary">Show warning if there\'s a problem
+        with a site\'s security
+    </string>
     <!-- Settings label -->
     <string name="pref_security_accept_cookies">Accept cookies</string>
     <!-- Settings summary -->
-    <string name="pref_security_accept_cookies_summary">Allow sites to save and read cookie data</string>
+    <string name="pref_security_accept_cookies_summary">Allow sites to save and read cookie data
+    </string>
     <!-- Settings text size options; appear in Text size dialog box [CHAR LIMIT=30] -->
     <string-array name="pref_text_size_choices">
         <item>Tiny</item>
@@ -501,7 +537,8 @@
     <!-- Label for minimum font size [CHAR LIMIT=30] -->
     <string name="pref_min_font_size">Minimum font size</string>
     <!-- Label for the current minimum font size value [CHAR LIMIT=6] -->
-    <string name="pref_min_font_size_value"><xliff:g id="font_size">%d</xliff:g>pt</string>
+    <string name="pref_min_font_size_value"><xliff:g id="font_size">%d</xliff:g>pt
+    </string>
     <!-- Label for text scaling (percent) [CHAR LIMIT=30] -->
     <string name="pref_text_zoom">Text scaling</string>
     <!-- Label for zoom on double-tap (percent) [CHAR LIMIT=30] -->
@@ -509,7 +546,9 @@
     <!-- Label for whether or not to force-enable user scalablity (aka, zoom) [CHAR LIMIT=30] -->
     <string name="pref_force_userscalable">Force enable zoom</string>
     <!-- Summary for whether or not to force-enable user scalablity (aka, zoom) [CHAR LIMIT=30] -->
-    <string name="pref_force_userscalable_summary">Override a website\'s request to control zoom behavior</string>
+    <string name="pref_force_userscalable_summary">Override a website\'s request to control zoom
+        behavior
+    </string>
     <!-- Inverted screen category under accessibility settings [CHAR LIMIT=50] -->
     <string name="pref_inverted_category">Inverted screen rendering</string>
     <!-- Title for the inverted screen feature. This causes the screen to render with inverted colors (black becomes white and vice versa) [CHAR LIMIT=40] -->
@@ -530,9 +569,15 @@
     <string name="pref_default_zoom_dialogtitle">Default zoom</string>
     <!-- Do not translate -->
     <string-array name="pref_default_zoom_values" translatable="false">
-        <item><xliff:g>FAR</xliff:g></item>
-        <item><xliff:g>MEDIUM</xliff:g></item>
-        <item><xliff:g>CLOSE</xliff:g></item>
+        <item>
+            <xliff:g>FAR</xliff:g>
+        </item>
+        <item>
+            <xliff:g>MEDIUM</xliff:g>
+        </item>
+        <item>
+            <xliff:g>CLOSE</xliff:g>
+        </item>
     </string-array>
     <!-- Settings label -->
     <string name="pref_content_load_page">Open pages in overview</string>
@@ -543,7 +588,8 @@
     <!-- Settings label -->
     <string name="pref_extras_website_settings">Website settings</string>
     <!-- Settings summary -->
-    <string name="pref_extras_website_settings_summary">Advanced settings for individual websites</string>
+    <string name="pref_extras_website_settings_summary">Advanced settings for individual websites
+    </string>
     <!-- Settings category label [CHAR-LIMIT=50] -->
     <string name="pref_extras_reset_default_title">Reset defaults</string>
     <!-- Settings label -->
@@ -557,7 +603,9 @@
     <!-- Do not tranlsate.  Development option -->
     <string name="pref_development_viewport" translatable="false">Use wide viewport</string>
     <!-- Do not tranlsate.  Development option -->
-    <string name="pref_development_single_column_rendering" translatable="false">Single column rendering</string>
+    <string name="pref_development_single_column_rendering" translatable="false">Single column
+        rendering
+    </string>
     <!-- Do not tranlsate.  Development option -->
     <string name="pref_development_normal_rendering" translatable="false">Normal rendering</string>
     <!-- Do not tranlsate.  Development option -->
@@ -565,13 +613,18 @@
     <!-- Do not tranlsate.  Development option -->
     <string name="pref_development_nav_dump" translatable="false">Enable nav cache dump</string>
     <!-- Do not tranlsate.  Development option -->
-    <string name="pref_development_hardware_accel" translatable="false">Enable OpenGL Rendering</string>
+    <string name="pref_development_hardware_accel" translatable="false">Enable OpenGL Rendering
+    </string>
     <!-- Do not tranlsate.  Development option -->
-    <string name="pref_development_hardware_accel_skia" translatable="false">Enable HW Accelerated Skia</string>
+    <string name="pref_development_hardware_accel_skia" translatable="false">Enable HW Accelerated
+        Skia
+    </string>
     <!-- Do not tranlsate.  Development option -->
-    <string name="pref_development_visual_indicator" translatable="false">Enable Visual Indicator</string>
+    <string name="pref_development_visual_indicator" translatable="false">Enable Visual Indicator
+    </string>
     <!-- Do not tranlsate.  Development option -->
-    <string name="pref_development_cpu_upload_path" translatable="false">Enable Cpu Upload Path</string>
+    <string name="pref_development_cpu_upload_path" translatable="false">Enable Cpu Upload Path
+    </string>
     <!-- Do not tranlsate.  Development option -->
     <string name="js_engine_flags" translatable="false">Set JS flags</string>
     <!-- Do not tranlsate.  Development option -->
@@ -594,7 +647,8 @@
         <item>4</item>
         <item>5</item>
     </string-array>
-    <string name="pref_development_error_console" translatable="false">Show JavaScript Console</string>
+    <string name="pref_development_error_console" translatable="false">Show JavaScript Console
+    </string>
     <!-- Do not translate. Development option to reset the prologin time [CHAR LIMIT=20] -->
     <string name="pref_development_reset_prelogin" translatable="false">Reset prelogin</string>
     <!-- Settings screen, setting option name -->
@@ -636,18 +690,21 @@
     <string name="pref_lab_quick_controls">Quick controls</string>
     <!-- Summary for lab quick controls feature [CHAR LIMIT=120] -->
     <string name="pref_lab_quick_controls_summary">
-        Slide thumb from the left or right edge to open quick controls and hide app and URL bars</string>
+        Slide thumb from the left or right edge to open quick controls and hide app and URL bars
+    </string>
     <!-- Title for the "Instant search" lab feature [CHAR LIMIT=40] -->
     <string name="pref_use_instant_search">Google Instant</string>
     <!-- Summary for the "Instant search" lab feature [CHAR LIMIT=120] -->
     <string name="pref_use_instant_search_summary">
-      Use Google Instant when you use Google Search, to show results as you
-      type (this can increase data use).</string>
+        Use Google Instant when you use Google Search, to show results as you
+        type (this can increase data use).
+    </string>
     <!-- Title for the fullscreen lab feature [CHAR LIMIT=40] -->
     <string name="pref_lab_fullscreen">Fullscreen</string>
     <!-- Summary for the fullscreen lab feature [CHAR LIMIT=120] -->
     <string name="pref_lab_fullscreen_summary">
-      Use fullscreen mode to hide the status bar</string>
+        Use fullscreen mode to hide the status bar
+    </string>
     <!-- Title for bandwidth management preference [CHAR LIMIT=25] -->
     <string name="pref_data_title">Bandwidth management</string>
     <!-- Title for search preloading [CHAR LIMIT=40] -->
@@ -662,14 +719,24 @@
     <string name="pref_data_preload_value_never" translatable="false">NEVER</string>
     <string name="pref_data_preload_value_wifi_only" translatable="false">WIFI_ONLY</string>
     <string name="pref_data_preload_value_always" translatable="false">ALWAYS</string>
-    <string name="pref_data_preload_default_value" translatable="false">@string/pref_data_preload_value_wifi_only</string>
+    <string name="pref_data_preload_default_value" translatable="false">
+        @string/pref_data_preload_value_wifi_only
+    </string>
     <string-array name="pref_data_preload_values" translatable="false">
-        <item><xliff:g>@string/pref_data_preload_value_never</xliff:g></item>
-        <item><xliff:g>@string/pref_data_preload_value_wifi_only</xliff:g></item>
-        <item><xliff:g>@string/pref_data_preload_value_always</xliff:g></item>
+        <item>
+            <xliff:g>@string/pref_data_preload_value_never</xliff:g>
+        </item>
+        <item>
+            <xliff:g>@string/pref_data_preload_value_wifi_only</xliff:g>
+        </item>
+        <item>
+            <xliff:g>@string/pref_data_preload_value_always</xliff:g>
+        </item>
     </string-array>
     <!-- Summary for search preloading [CHAR LIMIT=80] -->
-    <string name="pref_data_preload_summary">Allow browser to preload high confidence search results in the background</string>
+    <string name="pref_data_preload_summary">Allow browser to preload high confidence search results
+        in the background
+    </string>
     <!-- Title of dialog for search preloading [CHAR LIMIT=40] -->
     <string name="pref_data_preload_dialogtitle">Search result preloading</string>
     <!-- Title for link prefetching [CHAR LIMIT=40] -->
@@ -684,14 +751,24 @@
     <string name="pref_link_prefetch_value_never" translatable="false">NEVER</string>
     <string name="pref_link_prefetch_value_wifi_only" translatable="false">WIFI_ONLY</string>
     <string name="pref_link_prefetch_value_always" translatable="false">ALWAYS</string>
-    <string name="pref_link_prefetch_default_value" translatable="false">@string/pref_link_prefetch_value_wifi_only</string>
+    <string name="pref_link_prefetch_default_value" translatable="false">
+        @string/pref_link_prefetch_value_wifi_only
+    </string>
     <string-array name="pref_link_prefetch_values" translatable="false">
-        <item><xliff:g>@string/pref_link_prefetch_value_never</xliff:g></item>
-        <item><xliff:g>@string/pref_link_prefetch_value_wifi_only</xliff:g></item>
-        <item><xliff:g>@string/pref_link_prefetch_value_always</xliff:g></item>
+        <item>
+            <xliff:g>@string/pref_link_prefetch_value_never</xliff:g>
+        </item>
+        <item>
+            <xliff:g>@string/pref_link_prefetch_value_wifi_only</xliff:g>
+        </item>
+        <item>
+            <xliff:g>@string/pref_link_prefetch_value_always</xliff:g>
+        </item>
     </string-array>
     <!-- Summary for link prefetching [CHAR LIMIT=80] -->
-    <string name="pref_link_prefetch_summary">Allow browser to preload linked web pages in the background</string>
+    <string name="pref_link_prefetch_summary">Allow browser to preload linked web pages in the
+        background
+    </string>
     <!-- Title of dialog for link prefetching [CHAR LIMIT=40] -->
     <string name="pref_link_prefetch_dialogtitle">Web page preloading</string>
     <!-- Title for a dialog displayed when the browser has a data connectivity
@@ -703,12 +780,16 @@
     <!-- Dialog box title -->
     <string name="browserFrameFormResubmitLabel"></string>
     <!-- Dialog box message -->
-    <string name="browserFrameFormResubmitMessage">The page you\'re trying to view contains data that has already been submitted (\"POSTDATA\"). If you resend the data, any action the form on the page carried out (such as a search or online purchase) will be repeated.</string>
+    <string name="browserFrameFormResubmitMessage">The page you\'re trying to view contains data
+        that has already been submitted (\"POSTDATA\"). If you resend the data, any action the form
+        on the page carried out (such as a search or online purchase) will be repeated.
+    </string>
     <!-- Dialog box title -->
     <string name="loadSuspendedTitle">No connection</string>
     <!-- Dialog box message -->
     <string name="loadSuspended">The browser can\'t load this page because there\'s
-      no Internet connection.</string>
+        no Internet connection.
+    </string>
     <!-- Menu item -->
     <string name="clear_history">Clear history</string>
     <!-- History screen title; appears in title bar -->
@@ -739,7 +820,8 @@
     <!-- Message for a dialog informing the user that the site is attempting to
             display a popup window -->
     <string name="popup_window_attempt">Allow this site to open a
-      pop-up window?</string>
+        pop-up window?
+    </string>
     <!-- Label for a button to allow a particular popup window to open -->
     <string name="allow">Allow</string>
     <!-- Label for a button to disallow a particular popup from opening -->
@@ -750,14 +832,16 @@
     <string name="too_many_windows_dialog_title">Tab limit reached</string>
     <!-- Message in a dialog telling the user that they cannot open any more
             windows because the limit has been reached. -->
-    <string name="too_many_windows_dialog_message">Can\'t open a new tab until you close one.</string>
+    <string name="too_many_windows_dialog_message">Can\'t open a new tab until you close one.
+    </string>
     <!-- Title for a dialog informing the user that they cannot open a subwindow
             because only one can be open at a time. -->
     <string name="too_many_subwindows_dialog_title">Pop-up already open</string>
     <!-- Message for a dialog informing the user that they cannot open a
             subwindow because only one can be open at a time. -->
     <string name="too_many_subwindows_dialog_message">Only one pop-up can be open
-      at a time.</string>
+        at a time.
+    </string>
 
     <!-- Download History UI strings -->
     <!-- Dialog title [CHAR LIMIT=25] -->
@@ -765,14 +849,18 @@
     <string name="download_no_sdcard_dlg_title" product="default">USB storage unavailable</string>
     <!-- Dialog title -->
     <!-- Dialog message [CHAR LIMIT=NONE] -->
-    <string name="download_no_sdcard_dlg_msg">USB storage is required to download <xliff:g id="filename">%s</xliff:g>.</string>
+    <string name="download_no_sdcard_dlg_msg">USB storage is required to download<xliff:g
+            id="filename">%s</xliff:g>.
+    </string>
     <!-- Title for a dialog informing the user that the SD card used for
             external storage is busy so they cannot download anything [CHAR LIMIT=25] -->
     <string name="download_sdcard_busy_dlg_title" product="default">USB storage unavailable</string>
     <!-- Message for a dialog informing the user that the SD card used for
             external storage is busy so they cannot download anything.  Informs
             the user how to enable SD card storage -->
-    <string name="download_sdcard_busy_dlg_msg" product="default">The SD card is busy. To allow downloads, touch Turn Off USB Storage in the notification.</string>
+    <string name="download_sdcard_busy_dlg_msg" product="default">The SD card is busy. To allow
+        downloads, touch Turn Off USB Storage in the notification.
+    </string>
 
     <!-- Toast for a download which cannot begin because the URL is not http or https -->
     <string name="cannot_download">Can only download \"http\" or \"https\" URLs.</string>
@@ -786,7 +874,7 @@
 
     <!-- The default homepage. -->
     <!--<string name="homepage_base" translatable="false">-->
-        <!--https://www.google.com/webhp?client={CID}&amp;source=android-home</string>-->
+    <!--https://www.google.com/webhp?client={CID}&amp;source=android-home</string>-->
     <!-- 修改主页 -->
     <string name="homepage_base">http://www.baidu.com</string>
 
@@ -837,7 +925,8 @@
     <string name="webstorage_clear_data_title">Clear stored data</string>
 
     <!-- Confirmation dialog when the user ask to clear all data for an origin -->
-    <string name="webstorage_clear_data_dialog_message">Delete all data stored by this website?</string>
+    <string name="webstorage_clear_data_dialog_message">Delete all data stored by this website?
+    </string>
     <string name="webstorage_clear_data_dialog_ok_button">OK</string>
     <string name="webstorage_clear_data_dialog_cancel_button">Cancel</string>
     <!-- Strings used in the summary of origins -->
@@ -847,32 +936,50 @@
 
     <!-- Geolocation -->
     <!-- Permissions prompt -->
-    <string name="geolocation_permissions_prompt_message"><xliff:g example="maps.google.com" id="website origin">%s</xliff:g> wants to know your location</string>
+    <string name="geolocation_permissions_prompt_message">
+        <xliff:g example="maps.google.com" id="website origin">%s</xliff:g>
+        wants to know your location
+    </string>
     <string name="geolocation_permissions_prompt_share">Share location</string>
     <string name="geolocation_permissions_prompt_dont_share">Decline</string>
     <string name="geolocation_permissions_prompt_remember">Remember preference</string>
     <!-- Permissions prompt toast -->
-    <string name="geolocation_permissions_prompt_toast_allowed">This site can access your location. Change this on the Settings &gt; Advanced &gt; Website screen.</string>
-    <string name="geolocation_permissions_prompt_toast_disallowed">This site cannot access your location. Change this on the Settings &gt; Advanced &gt; Website screen.</string>
+    <string name="geolocation_permissions_prompt_toast_allowed">This site can access your location.
+        Change this on the Settings &gt; Advanced &gt; Website screen.
+    </string>
+    <string name="geolocation_permissions_prompt_toast_disallowed">This site cannot access your
+        location. Change this on the Settings &gt; Advanced &gt; Website screen.
+    </string>
     <!-- Settings -> Advanced -> Website settings -> <origin> -->
     <string name="geolocation_settings_page_title">Clear location access</string>
-    <string name="geolocation_settings_page_summary_allowed">This site can currently access your location</string>
-    <string name="geolocation_settings_page_summary_not_allowed">This site can\'t currently access your location</string>
+    <string name="geolocation_settings_page_summary_allowed">This site can currently access your
+        location
+    </string>
+    <string name="geolocation_settings_page_summary_not_allowed">This site can\'t currently access
+        your location
+    </string>
     <!-- Settings page dialog -->
-    <string name="geolocation_settings_page_dialog_message">Clear location access for this website?</string>
+    <string name="geolocation_settings_page_dialog_message">Clear location access for this
+        website?
+    </string>
     <string name="geolocation_settings_page_dialog_ok_button">OK</string>
     <string name="geolocation_settings_page_dialog_cancel_button">Cancel</string>
     <!-- Label for the menu item in the website settings activity used to clear data stored by all websites -->
     <string name="website_settings_clear_all">Clear all</string>
-    <string name="website_settings_clear_all_dialog_message">Delete all website data and location permissions?</string>
+    <string name="website_settings_clear_all_dialog_message">Delete all website data and location
+        permissions?
+    </string>
     <string name="website_settings_clear_all_dialog_ok_button">OK</string>
     <string name="website_settings_clear_all_dialog_cancel_button">Cancel</string>
 
     <!-- Text in the progress dialog when we are setting an image as the home screen wallpaper. -->
     <string name="progress_dialog_setting_wallpaper">Setting wallpaper\u2026</string>
 
-    <string name="error_console_header_text_minimized" translatable="false">Show JavaScript console</string>
-    <string name="error_console_header_text_maximized" translatable="false">JavaScript console</string>
+    <string name="error_console_header_text_minimized" translatable="false">Show JavaScript
+        console
+    </string>
+    <string name="error_console_header_text_maximized" translatable="false">JavaScript console
+    </string>
     <string name="error_console_eval_text_hint" translatable="false">Evaluate JavaScript</string>
     <string name="error_console_eval_button_text" translatable="false">Evaluate</string>
 
@@ -897,19 +1004,32 @@
     <string name="import_bookmarks_dialog_title">Sync with Google account</string>
 
     <!-- Description for a dialog asking the user what they want to do with their bookmarks when adding a sync account [CHAR-LIMIT=none] -->
-    <string name="import_bookmarks_dialog_description">Bookmarks on this device are not yet associated with a Google account. Save these bookmarks by adding them to an account. Delete these bookmarks if you don\'t want to sync them.</string>
+    <string name="import_bookmarks_dialog_description">Bookmarks on this device are not yet
+        associated with a Google account. Save these bookmarks by adding them to an account. Delete
+        these bookmarks if you don\'t want to sync them.
+    </string>
 
     <!-- Description for selecting the account to add bookmarks to and begin syncing with [CHAR-LIMIT=none] -->
-    <string name="import_bookmarks_dialog_select_add_account">Add bookmarks currently on this device and begin syncing with Google account</string>
+    <string name="import_bookmarks_dialog_select_add_account">Add bookmarks currently on this device
+        and begin syncing with Google account
+    </string>
 
     <!-- Description for selecting the account to sync with and delete local bookmarks [CHAR-LIMIT=none] -->
-    <string name="import_bookmarks_dialog_delete_select_account">Delete bookmarks currently on this device and begin syncing with Google account</string>
+    <string name="import_bookmarks_dialog_delete_select_account">Delete bookmarks currently on this
+        device and begin syncing with Google account
+    </string>
 
     <!-- Description confirming user's choice to delete bookmarks [CHAR-LIMIT=none] -->
-    <string name="import_bookmarks_dialog_confirm_delete">Delete bookmarks currently on this device and begin syncing bookmarks with <xliff:g example="account@example.com" id="Google account">%s</xliff:g>?</string>
+    <string name="import_bookmarks_dialog_confirm_delete">Delete bookmarks currently on this device
+        and begin syncing bookmarks with<xliff:g example="account@example.com" id="Google account">
+            %s</xliff:g>?
+    </string>
 
     <!-- Description confirming user's choice to add bookmarks to an account [CHAR-LIMIT=none] -->
-    <string name="import_bookmarks_dialog_confirm_add">Add bookmarks currently on this device and begin syncing bookmarks with <xliff:g example="account@example.com" id="Google account">%s</xliff:g>?</string>
+    <string name="import_bookmarks_dialog_confirm_add">Add bookmarks currently on this device and
+        begin syncing bookmarks with<xliff:g example="account@example.com" id="Google account">
+            %s</xliff:g>?
+    </string>
 
     <!-- Button allowing users to remove all of their existing bookmarks when setting up syncing with their bookmarks stored in Google Chrome [CHAR-LIMIT=64] -->
     <string name="import_bookmarks_dialog_remove">Delete bookmarks</string>
@@ -930,7 +1050,9 @@
     <string name="import_bookmarks_dialog_add">Add bookmarks to Google account</string>
 
     <!-- Button allowing users to import all of their existing bookmarks into an account when setting up syncing with their bookmarks stored in Google Chrome [CHAR-LIMIT=64] -->
-    <string name="import_bookmarks_dialog_import">Add your Android bookmarks to bookmarks for <xliff:g example="account@example.com" id="Google account">%s</xliff:g></string>
+    <string name="import_bookmarks_dialog_import">Add your Android bookmarks to bookmarks for
+        <xliff:g example="account@example.com" id="Google account">%s</xliff:g>
+    </string>
 
     <!-- Url Selection Action Mode -->
 

@@ -15,6 +15,11 @@
  */
 package com.stockbrowser.homepages;
 
+import com.android.browser.R;
+import com.stockbrowser.provider.BrowserContract;
+import com.stockbrowser.provider.BrowserContract.Bookmarks;
+import com.stockbrowser.provider.BrowserContract.History;
+
 import android.content.Context;
 import android.content.UriMatcher;
 import android.content.res.Resources;
@@ -24,11 +29,6 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
-
-import com.android.browser.R;
-import com.stockbrowser.provider.BrowserContract;
-import com.stockbrowser.provider.BrowserContract.Bookmarks;
-import com.stockbrowser.provider.BrowserContract.History;
 
 import java.io.File;
 import java.io.IOException;
@@ -43,220 +43,219 @@ import java.util.regex.Pattern;
 
 public class RequestHandler extends Thread {
 
-    private static final String TAG = "RequestHandler";
-    private static final int INDEX = 1;
-    private static final int RESOURCE = 2;
-    private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-    // We can reuse this for both History and Bookmarks queries because the
-    // columns defined actually belong to the CommonColumn and ImageColumn
-    // interfaces that both History and Bookmarks implement
-    private static final String[] PROJECTION = new String[]{
-            History.URL,
-            BrowserContract.History.TITLE,
-            History.THUMBNAIL
-    };
-    private static final String SELECTION = History.URL
-            + " NOT LIKE 'content:%' AND " + History.THUMBNAIL + " IS NOT NULL";
-    private static final Comparator<File> sFileComparator = new Comparator<File>() {
-        @Override
-        public int compare(File lhs, File rhs) {
-            if (lhs.isDirectory() != rhs.isDirectory()) {
-                return lhs.isDirectory() ? -1 : 1;
-            }
-            return lhs.getName().compareTo(rhs.getName());
-        }
-    };
+	private static final String TAG = "RequestHandler";
+	private static final int INDEX = 1;
+	private static final int RESOURCE = 2;
+	private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+	// We can reuse this for both History and Bookmarks queries because the
+	// columns defined actually belong to the CommonColumn and ImageColumn
+	// interfaces that both History and Bookmarks implement
+	private static final String[] PROJECTION = new String[]{
+			History.URL,
+			BrowserContract.History.TITLE,
+			History.THUMBNAIL
+	};
+	private static final String SELECTION = History.URL
+			+ " NOT LIKE 'content:%' AND " + History.THUMBNAIL + " IS NOT NULL";
+	private static final Comparator<File> sFileComparator = new Comparator<File>() {
+		@Override
+		public int compare(File lhs, File rhs) {
+			if (lhs.isDirectory() != rhs.isDirectory()) {
+				return lhs.isDirectory() ? -1 : 1;
+			}
+			return lhs.getName().compareTo(rhs.getName());
+		}
+	};
 
-    static {
-        sUriMatcher.addURI(HomeProvider.AUTHORITY, "/", INDEX);
-        sUriMatcher.addURI(HomeProvider.AUTHORITY, "res/*/*", RESOURCE);
-    }
+	static {
+		sUriMatcher.addURI(HomeProvider.AUTHORITY, "/", INDEX);
+		sUriMatcher.addURI(HomeProvider.AUTHORITY, "res/*/*", RESOURCE);
+	}
 
-    Uri mUri;
-    Context mContext;
-    OutputStream mOutput;
+	Uri mUri;
+	Context mContext;
+	OutputStream mOutput;
 
-    public RequestHandler(Context context, Uri uri, OutputStream out) {
-        mUri = uri;
-        mContext = context.getApplicationContext();
-        mOutput = out;
-    }
+	public RequestHandler(Context context, Uri uri, OutputStream out) {
+		mUri = uri;
+		mContext = context.getApplicationContext();
+		mOutput = out;
+	}
 
-    static String readableFileSize(long size) {
-        if (size <= 0) return "0";
-        final String[] units = new String[]{"B", "KB", "MB", "GB", "TB"};
-        int digitGroups = (int) (Math.log10(size) / Math.log10(1024));
-        return new DecimalFormat("#,##0.#").format(
-                size / Math.pow(1024, digitGroups)) + " " + units[digitGroups];
-    }
+	static String readableFileSize(long size) {
+		if (size <= 0) return "0";
+		final String[] units = new String[]{"B", "KB", "MB", "GB", "TB"};
+		int digitGroups = (int) (Math.log10(size) / Math.log10(1024));
+		return new DecimalFormat("#,##0.#").format(
+				size / Math.pow(1024, digitGroups)) + " " + units[digitGroups];
+	}
 
-    @Override
-    public void run() {
-        super.run();
-        try {
-            doHandleRequest();
-        } catch (Exception e) {
-            Log.e(TAG, "Failed to handle request: " + mUri, e);
-        } finally {
-            cleanup();
-        }
-    }
+	@Override
+	public void run() {
+		super.run();
+		try {
+			doHandleRequest();
+		} catch (Exception e) {
+			Log.e(TAG, "Failed to handle request: " + mUri, e);
+		} finally {
+			cleanup();
+		}
+	}
 
-    void doHandleRequest() throws IOException {
-        if ("file".equals(mUri.getScheme())) {
-            writeFolderIndex();
-            return;
-        }
-        int match = sUriMatcher.match(mUri);
-        switch (match) {
-            case INDEX:
-                writeTemplatedIndex();
-                break;
-            case RESOURCE:
-                writeResource(getUriResourcePath());
-                break;
-        }
-    }
+	void doHandleRequest() throws IOException {
+		if ("file".equals(mUri.getScheme())) {
+			writeFolderIndex();
+			return;
+		}
+		int match = sUriMatcher.match(mUri);
+		switch (match) {
+			case INDEX:
+				writeTemplatedIndex();
+				break;
+			case RESOURCE:
+				writeResource(getUriResourcePath());
+				break;
+		}
+	}
 
-    byte[] htmlEncode(String s) {
-        return TextUtils.htmlEncode(s).getBytes();
-    }
+	byte[] htmlEncode(String s) {
+		return TextUtils.htmlEncode(s).getBytes();
+	}
 
-    void writeTemplatedIndex() throws IOException {
-        Template t = Template.getCachedTemplate(mContext, R.raw.most_visited);
-        Cursor historyResults = mContext.getContentResolver().query(
-                History.CONTENT_URI, PROJECTION, SELECTION,
-                null, History.VISITS + " DESC LIMIT 12");
-        Cursor cursor = historyResults;
-        try {
-            if (cursor.getCount() < 12) {
-                Cursor bookmarkResults = mContext.getContentResolver().query(
-                        Bookmarks.CONTENT_URI, PROJECTION, SELECTION,
-                        null, Bookmarks.DATE_CREATED + " DESC LIMIT 12");
-                cursor = new MergeCursor(new Cursor[]{historyResults, bookmarkResults}) {
-                    @Override
-                    public int getCount() {
-                        return Math.min(12, super.getCount());
-                    }
-                };
-            }
-            t.assignLoop("most_visited", new Template.CursorListEntityWrapper(cursor) {
-                @Override
-                public void writeValue(OutputStream stream, String key) throws IOException {
-                    Cursor cursor = getCursor();
-                    if (key.equals("url")) {
-                        stream.write(htmlEncode(cursor.getString(0)));
-                    } else if (key.equals("title")) {
-                        stream.write(htmlEncode(cursor.getString(1)));
-                    } else if (key.equals("thumbnail")) {
-                        stream.write("data:image/png;base64,".getBytes());
-                        byte[] thumb = cursor.getBlob(2);
-                        stream.write(Base64.encode(thumb, Base64.DEFAULT));
-                    }
-                }
-            });
-            t.write(mOutput);
-        } finally {
-            cursor.close();
-        }
-    }
+	void writeTemplatedIndex() throws IOException {
+		Template t = Template.getCachedTemplate(mContext, R.raw.most_visited);
+		Cursor historyResults = mContext.getContentResolver().query(
+				History.CONTENT_URI, PROJECTION, SELECTION,
+				null, History.VISITS + " DESC LIMIT 12");
+		Cursor cursor = historyResults;
+		try {
+			if (cursor.getCount() < 12) {
+				Cursor bookmarkResults = mContext.getContentResolver().query(
+						Bookmarks.CONTENT_URI, PROJECTION, SELECTION,
+						null, Bookmarks.DATE_CREATED + " DESC LIMIT 12");
+				cursor = new MergeCursor(new Cursor[]{historyResults, bookmarkResults}) {
+					@Override
+					public int getCount() {
+						return Math.min(12, super.getCount());
+					}
+				};
+			}
+			t.assignLoop("most_visited", new Template.CursorListEntityWrapper(cursor) {
+				@Override
+				public void writeValue(OutputStream stream, String key) throws IOException {
+					Cursor cursor = getCursor();
+					if (key.equals("url")) {
+						stream.write(htmlEncode(cursor.getString(0)));
+					} else if (key.equals("title")) {
+						stream.write(htmlEncode(cursor.getString(1)));
+					} else if (key.equals("thumbnail")) {
+						stream.write("data:image/png;base64,".getBytes());
+						byte[] thumb = cursor.getBlob(2);
+						stream.write(Base64.encode(thumb, Base64.DEFAULT));
+					}
+				}
+			});
+			t.write(mOutput);
+		} finally {
+			cursor.close();
+		}
+	}
 
-    void writeFolderIndex() throws IOException {
-        File f = new File(mUri.getPath());
-        final File[] files = f.listFiles();
-        Arrays.sort(files, sFileComparator);
-        Template t = Template.getCachedTemplate(mContext, R.raw.folder_view);
-        t.assign("path", mUri.getPath());
-        t.assign("parent_url", f.getParent() != null ? f.getParent() : f.getPath());
-        t.assignLoop("files", new Template.ListEntityIterator() {
-            int index = -1;
+	void writeFolderIndex() throws IOException {
+		File f = new File(mUri.getPath());
+		final File[] files = f.listFiles();
+		Arrays.sort(files, sFileComparator);
+		Template t = Template.getCachedTemplate(mContext, R.raw.folder_view);
+		t.assign("path", mUri.getPath());
+		t.assign("parent_url", f.getParent() != null ? f.getParent() : f.getPath());
+		t.assignLoop("files", new Template.ListEntityIterator() {
+			int index = -1;
 
-            @Override
-            public void writeValue(OutputStream stream, String key) throws IOException {
-                File f = files[index];
-                if ("name".equals(key)) {
-                    stream.write(f.getName().getBytes());
-                }
-                if ("url".equals(key)) {
-                    stream.write(("file://" + f.getAbsolutePath()).getBytes());
-                }
-                if ("type".equals(key)) {
-                    stream.write((f.isDirectory() ? "dir" : "file").getBytes());
-                }
-                if ("size".equals(key)) {
-                    if (f.isFile()) {
-                        stream.write(readableFileSize(f.length()).getBytes());
-                    }
-                }
-                if ("last_modified".equals(key)) {
-                    String date = DateFormat.getDateTimeInstance(
-                            DateFormat.SHORT, DateFormat.SHORT)
-                            .format(f.lastModified());
-                    stream.write(date.getBytes());
-                }
-                if ("alt".equals(key)) {
-                    if (index % 2 == 0) {
-                        stream.write("alt".getBytes());
-                    }
-                }
-            }
+			@Override
+			public void writeValue(OutputStream stream, String key) throws IOException {
+				File f = files[index];
+				if ("name".equals(key)) {
+					stream.write(f.getName().getBytes());
+				}
+				if ("url".equals(key)) {
+					stream.write(("file://" + f.getAbsolutePath()).getBytes());
+				}
+				if ("type".equals(key)) {
+					stream.write((f.isDirectory() ? "dir" : "file").getBytes());
+				}
+				if ("size".equals(key)) {
+					if (f.isFile()) {
+						stream.write(readableFileSize(f.length()).getBytes());
+					}
+				}
+				if ("last_modified".equals(key)) {
+					String date = DateFormat.getDateTimeInstance(
+							DateFormat.SHORT, DateFormat.SHORT)
+							.format(f.lastModified());
+					stream.write(date.getBytes());
+				}
+				if ("alt".equals(key)) {
+					if (index % 2 == 0) {
+						stream.write("alt".getBytes());
+					}
+				}
+			}
 
-            @Override
-            public Template.ListEntityIterator getListIterator(String key) {
-                return null;
-            }
+			@Override
+			public Template.ListEntityIterator getListIterator(String key) {
+				return null;
+			}
 
-            @Override
-            public void reset() {
-                index = -1;
-            }
+			@Override
+			public void reset() {
+				index = -1;
+			}
 
-            @Override
-            public boolean moveToNext() {
-                return (++index) < files.length;
-            }
-        });
-        t.write(mOutput);
-    }
+			@Override
+			public boolean moveToNext() {
+				return (++index) < files.length;
+			}
+		});
+		t.write(mOutput);
+	}
 
-    String getUriResourcePath() {
-        final Pattern pattern = Pattern.compile("/?res/([\\w/]+)");
-        Matcher m = pattern.matcher(mUri.getPath());
-        if (m.matches()) {
-            return m.group(1);
-        } else {
-            return mUri.getPath();
-        }
-    }
+	String getUriResourcePath() {
+		final Pattern pattern = Pattern.compile("/?res/([\\w/]+)");
+		Matcher m = pattern.matcher(mUri.getPath());
+		if (m.matches()) {
+			return m.group(1);
+		} else {
+			return mUri.getPath();
+		}
+	}
 
-    void writeResource(String fileName) throws IOException {
-        Resources res = mContext.getResources();
-        String packageName = R.class.getPackage().getName();
-        int id = res.getIdentifier(fileName, null, packageName);
-        if (id != 0) {
-            InputStream in = res.openRawResource(id);
-            byte[] buf = new byte[4096];
-            int read;
-            while ((read = in.read(buf)) > 0) {
-                mOutput.write(buf, 0, read);
-            }
-        }
-    }
+	void writeResource(String fileName) throws IOException {
+		Resources res = mContext.getResources();
+		String packageName = R.class.getPackage().getName();
+		int id = res.getIdentifier(fileName, null, packageName);
+		if (id != 0) {
+			InputStream in = res.openRawResource(id);
+			byte[] buf = new byte[4096];
+			int read;
+			while ((read = in.read(buf)) > 0) {
+				mOutput.write(buf, 0, read);
+			}
+		}
+	}
 
-    void writeString(String str) throws IOException {
-        mOutput.write(str.getBytes());
-    }
+	void writeString(String str) throws IOException {
+		mOutput.write(str.getBytes());
+	}
 
-    void writeString(String str, int offset, int count) throws IOException {
-        mOutput.write(str.getBytes(), offset, count);
-    }
+	void writeString(String str, int offset, int count) throws IOException {
+		mOutput.write(str.getBytes(), offset, count);
+	}
 
-    void cleanup() {
-        try {
-            mOutput.close();
-        } catch (Exception e) {
-            Log.e(TAG, "Failed to close pipe!", e);
-        }
-    }
-
+	void cleanup() {
+		try {
+			mOutput.close();
+		} catch (Exception e) {
+			Log.e(TAG, "Failed to close pipe!", e);
+		}
+	}
 }

@@ -29,18 +29,18 @@
                       android:orientation="vertical">
 
             <View
-                android:layout_width="match_parent"
-                android:layout_height="10dip"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="10dip"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/autofill_profile_editor_heading"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/autofill_profile_editor_heading"
+                    android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <View
-                android:layout_width="match_parent"
-                android:layout_height="12dip"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="12dip"/>
 
             <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
                          android:layout_width="match_parent"
@@ -51,25 +51,25 @@
                 <TableRow>
 
                     <TextView
-                        style="@style/AutofillProfileTextView"
-                        android:text="@string/autofill_profile_editor_name"/>
+                            style="@style/AutofillProfileTextView"
+                            android:text="@string/autofill_profile_editor_name"/>
 
                     <EditText
-                        android:id="@+id/autofill_profile_editor_name_edit"
-                        style="@style/AutofillProfileEditText"
-                        android:inputType="textPersonName|textCapWords"/>
+                            android:id="@+id/autofill_profile_editor_name_edit"
+                            style="@style/AutofillProfileEditText"
+                            android:inputType="textPersonName|textCapWords"/>
                 </TableRow>
 
                 <TableRow>
 
                     <TextView
-                        style="@style/AutofillProfileTextView"
-                        android:text="@string/autofill_profile_editor_company_name"/>
+                            style="@style/AutofillProfileTextView"
+                            android:text="@string/autofill_profile_editor_company_name"/>
 
                     <EditText
-                        android:id="@+id/autofill_profile_editor_company_name_edit"
-                        style="@style/AutofillProfileEditText"
-                        android:inputType="textCapWords"/>
+                            android:id="@+id/autofill_profile_editor_company_name_edit"
+                            style="@style/AutofillProfileEditText"
+                            android:inputType="textCapWords"/>
                 </TableRow>
 
                 <TableRow>
@@ -81,24 +81,24 @@
                                   android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:text="@string/autofill_profile_editor_address_line_1"
-                            android:textAppearance="?android:attr/textAppearanceMedium"/>
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:text="@string/autofill_profile_editor_address_line_1"
+                                android:textAppearance="?android:attr/textAppearanceMedium"/>
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:text="@string/autofill_profile_editor_address_line_1_hint"
-                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:text="@string/autofill_profile_editor_address_line_1_hint"
+                                android:textAppearance="?android:attr/textAppearanceSmall"/>
                     </LinearLayout>
 
                     <EditText
-                        android:id="@+id/autofill_profile_editor_address_line_1_edit"
-                        style="@style/AutofillProfileEditText"
-                        android:inputType="textCapWords"/>
+                            android:id="@+id/autofill_profile_editor_address_line_1_edit"
+                            style="@style/AutofillProfileEditText"
+                            android:inputType="textCapWords"/>
                 </TableRow>
 
                 <TableRow>
@@ -110,97 +110,97 @@
                                   android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:text="@string/autofill_profile_editor_address_line_2"
-                            android:textAppearance="?android:attr/textAppearanceMedium"/>
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:text="@string/autofill_profile_editor_address_line_2"
+                                android:textAppearance="?android:attr/textAppearanceMedium"/>
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:text="@string/autofill_profile_editor_address_line_2_hint"
-                            android:textAppearance="?android:attr/textAppearanceSmall"/>
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:text="@string/autofill_profile_editor_address_line_2_hint"
+                                android:textAppearance="?android:attr/textAppearanceSmall"/>
                     </LinearLayout>
 
                     <EditText
-                        android:id="@+id/autofill_profile_editor_address_line_2_edit"
-                        style="@style/AutofillProfileEditText"
-                        android:inputType="textCapWords"/>
+                            android:id="@+id/autofill_profile_editor_address_line_2_edit"
+                            style="@style/AutofillProfileEditText"
+                            android:inputType="textCapWords"/>
                 </TableRow>
 
                 <TableRow>
 
                     <TextView
-                        style="@style/AutofillProfileTextView"
-                        android:text="@string/autofill_profile_editor_city"/>
+                            style="@style/AutofillProfileTextView"
+                            android:text="@string/autofill_profile_editor_city"/>
 
                     <EditText
-                        android:id="@+id/autofill_profile_editor_city_edit"
-                        style="@style/AutofillProfileEditText"
-                        android:inputType="textCapWords"/>
+                            android:id="@+id/autofill_profile_editor_city_edit"
+                            style="@style/AutofillProfileEditText"
+                            android:inputType="textCapWords"/>
                 </TableRow>
 
                 <TableRow>
 
                     <TextView
-                        style="@style/AutofillProfileTextView"
-                        android:text="@string/autofill_profile_editor_state"/>
+                            style="@style/AutofillProfileTextView"
+                            android:text="@string/autofill_profile_editor_state"/>
 
                     <EditText
-                        android:id="@+id/autofill_profile_editor_state_edit"
-                        style="@style/AutofillProfileEditText"
-                        android:inputType="textCapWords"/>
+                            android:id="@+id/autofill_profile_editor_state_edit"
+                            style="@style/AutofillProfileEditText"
+                            android:inputType="textCapWords"/>
                 </TableRow>
 
                 <TableRow>
 
                     <TextView
-                        style="@style/AutofillProfileTextView"
-                        android:text="@string/autofill_profile_editor_zip_code"/>
+                            style="@style/AutofillProfileTextView"
+                            android:text="@string/autofill_profile_editor_zip_code"/>
 
                     <EditText
-                        android:id="@+id/autofill_profile_editor_zip_code_edit"
-                        style="@style/AutofillProfileEditText"
-                        android:inputType="textCapCharacters"/>
+                            android:id="@+id/autofill_profile_editor_zip_code_edit"
+                            style="@style/AutofillProfileEditText"
+                            android:inputType="textCapCharacters"/>
                 </TableRow>
 
                 <TableRow>
 
                     <TextView
-                        style="@style/AutofillProfileTextView"
-                        android:text="@string/autofill_profile_editor_country"/>
+                            style="@style/AutofillProfileTextView"
+                            android:text="@string/autofill_profile_editor_country"/>
 
                     <EditText
-                        android:id="@+id/autofill_profile_editor_country_edit"
-                        style="@style/AutofillProfileEditText"
-                        android:inputType="textCapWords"/>
+                            android:id="@+id/autofill_profile_editor_country_edit"
+                            style="@style/AutofillProfileEditText"
+                            android:inputType="textCapWords"/>
                 </TableRow>
 
                 <TableRow>
 
                     <TextView
-                        style="@style/AutofillProfileTextView"
-                        android:text="@string/autofill_profile_editor_phone_number"/>
+                            style="@style/AutofillProfileTextView"
+                            android:text="@string/autofill_profile_editor_phone_number"/>
 
                     <EditText
-                        android:id="@+id/autofill_profile_editor_phone_number_edit"
-                        style="@style/AutofillProfileEditText"
-                        android:phoneNumber="true"/>
+                            android:id="@+id/autofill_profile_editor_phone_number_edit"
+                            style="@style/AutofillProfileEditText"
+                            android:phoneNumber="true"/>
                 </TableRow>
 
                 <TableRow>
 
                     <TextView
-                        style="@style/AutofillProfileTextView"
-                        android:text="@string/autofill_profile_editor_email_address"/>
+                            style="@style/AutofillProfileTextView"
+                            android:text="@string/autofill_profile_editor_email_address"/>
 
                     <EditText
-                        android:id="@+id/autofill_profile_editor_email_address_edit"
-                        style="@style/AutofillProfileEditText"
-                        android:imeOptions="actionDone|flagNoExtractUi"
-                        android:inputType="textEmailAddress"/>
+                            android:id="@+id/autofill_profile_editor_email_address_edit"
+                            style="@style/AutofillProfileEditText"
+                            android:imeOptions="actionDone|flagNoExtractUi"
+                            android:inputType="textEmailAddress"/>
                 </TableRow>
             </TableLayout>
         </LinearLayout>
