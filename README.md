@@ -1,1 +1,4 @@
-# AndroidStockBrowser
+# androidstockbrowser
+
+Stock Browser for Android
+
