@@ -137,5 +137,7 @@ V/Tab: ⇢ onPageStarted(view=BrowserWebView, url="http://xw.qq.com/index.htm", 
 V/Tab: ⇢ onReceivedIcon(view=BrowserWebView, icon=Bitmap@315bd90a)
 V/Tab: ⇢ onPageFinished(view=BrowserWebView, url="http://xw.qq.com/index.htm")
 ```
-可见没重定向一次，就会回调`onPageStarted`方法，倘若需要多次重定向，则每次都会回调`onPageStarted`方法。
+可见每重定向一次，就会回调`onPageStarted`方法，倘若需要多次重定向，则每次都会回调`onPageStarted`方法。只有最终重定向的网址会被记录到历史栈中。
+
+
 
