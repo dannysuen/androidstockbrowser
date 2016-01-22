@@ -128,19 +128,14 @@ void freeMemory() {
 }
 ```
 
-## URL重定向
-URL重定向时，会多次回调Tab$mWebViewClient.onPageStarted方法。
-比如在地址栏输入qq.com后，回调方式如下：
+## 网址重定向的分析
+当发生网址重定向时，WebView会多次回调WebViewClient.onPageStarted方法。比如在地址栏输入`qq.com`后，回调方式如下：
 ```
-V/Tab: ⇢ onPageStarted(view=com.stockbrowser.BrowserWebView, url="http://qq.com/", favicon=Bitmap@23b4987f)
-V/Tab: ⇠ onPageStarted [2ms]
-V/Tab: ⇢ onPageStarted(view=com.stockbrowser.BrowserWebView, url="http://www.qq.com/", favicon=Bitmap@23b4987f)
-V/Tab: ⇠ onPageStarted [3ms]
-V/Tab: ⇢ onPageStarted(view=com.stockbrowser.BrowserWebView, url="http://xw.qq.com/index.htm", favicon=Bitmap@23b4987f)
-V/Tab: ⇠ onPageStarted [6ms]
-V/Tab: ⇢ onReceivedIcon(view=com.stockbrowser.BrowserWebView, icon=Bitmap@315bd90a)
-V/Tab: ⇠ onReceivedIcon [3ms]
-V/Tab: ⇢ onPageFinished(view=com.stockbrowser.BrowserWebView, url="http://xw.qq.com/index.htm")
-V/Tab: ⇠ onPageFinished [3ms]
+V/Tab: ⇢ onPageStarted(view=BrowserWebView, url="http://qq.com/", favicon=Bitmap@23b4987f)
+V/Tab: ⇢ onPageStarted(view=BrowserWebView, url="http://www.qq.com/", favicon=Bitmap@23b4987f)
+V/Tab: ⇢ onPageStarted(view=BrowserWebView, url="http://xw.qq.com/index.htm", favicon=Bitmap@23b4987f)
+V/Tab: ⇢ onReceivedIcon(view=BrowserWebView, icon=Bitmap@315bd90a)
+V/Tab: ⇢ onPageFinished(view=BrowserWebView, url="http://xw.qq.com/index.htm")
+```
+可见没重定向一次，就会回调`onPageStarted`方法，倘若需要多次重定向，则每次都会回调`onPageStarted`方法。
 
-```
