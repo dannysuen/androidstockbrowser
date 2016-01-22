@@ -129,4 +129,18 @@ void freeMemory() {
 ```
 
 ## URL重定向
-URL重定向时，会多次回调Tab$mWebViewClient.onPageStarted方法
+URL重定向时，会多次回调Tab$mWebViewClient.onPageStarted方法。
+比如在地址栏输入qq.com后，回调方式如下：
+```
+01-22 15:13:32.117 15334-15334/com.stockbrowser V/Tab: ⇢ onPageStarted(view=com.stockbrowser.BrowserWebView{6b332c VFEDHVCL .F...... 0,0-1080,1704}, url="http://qq.com/", favicon=android.graphics.Bitmap@23b4987f)
+01-22 15:13:32.117 15334-15334/com.stockbrowser V/Tab: ⇠ onPageStarted [2ms]
+01-22 15:13:32.167 15334-15334/com.stockbrowser V/Tab: ⇢ onPageStarted(view=com.stockbrowser.BrowserWebView{6b332c VFEDHVCL .F...... 0,0-1080,1704}, url="http://www.qq.com/", favicon=android.graphics.Bitmap@23b4987f)
+01-22 15:13:32.167 15334-15334/com.stockbrowser V/Tab: ⇠ onPageStarted [3ms]
+01-22 15:13:32.317 15334-15334/com.stockbrowser V/Tab: ⇢ onPageStarted(view=com.stockbrowser.BrowserWebView{6b332c VFEDHVCL .F...... 0,0-1080,1704}, url="http://xw.qq.com/index.htm", favicon=android.graphics.Bitmap@23b4987f)
+01-22 15:13:32.327 15334-15334/com.stockbrowser V/Tab: ⇠ onPageStarted [6ms]
+01-22 15:13:33.367 15334-15334/com.stockbrowser V/Tab: ⇢ onReceivedIcon(view=com.stockbrowser.BrowserWebView{6b332c VFEDHVCL .F....ID 0,0-1080,1704}, icon=android.graphics.Bitmap@315bd90a)
+01-22 15:13:33.377 15334-15334/com.stockbrowser V/Tab: ⇠ onReceivedIcon [3ms]
+01-22 15:13:33.447 15334-15334/com.stockbrowser V/Tab: ⇢ onPageFinished(view=com.stockbrowser.BrowserWebView{6b332c VFEDHVCL .F....ID 0,0-1080,1704}, url="http://xw.qq.com/index.htm")
+01-22 15:13:33.447 15334-15334/com.stockbrowser V/Tab: ⇠ onPageFinished [3ms]
+
+```
