@@ -1,4 +1,6 @@
-# androidstockbrowser
+# Code Analysis of Android Stock Browser
+
+This analysis aims to provide a thorough guide to developing browser apps based on stock browser.
 
 Stock Browser for Android
 
