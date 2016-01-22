@@ -127,3 +127,17 @@ void freeMemory() {
     }
 }
 ```
+
+## 网址重定向的分析
+当发生网址重定向时，WebView会多次回调WebViewClient.onPageStarted方法。比如在地址栏输入`qq.com`后，回调方式如下：
+```
+V/Tab: ⇢ onPageStarted(view=BrowserWebView, url="http://qq.com/", favicon=Bitmap@23b4987f)
+V/Tab: ⇢ onPageStarted(view=BrowserWebView, url="http://www.qq.com/", favicon=Bitmap@23b4987f)
+V/Tab: ⇢ onPageStarted(view=BrowserWebView, url="http://xw.qq.com/index.htm", favicon=Bitmap@23b4987f)
+V/Tab: ⇢ onReceivedIcon(view=BrowserWebView, icon=Bitmap@315bd90a)
+V/Tab: ⇢ onPageFinished(view=BrowserWebView, url="http://xw.qq.com/index.htm")
+```
+可见每重定向一次，就会回调`onPageStarted`方法，倘若需要多次重定向，则每次都会回调`onPageStarted`方法。只有最终重定向的网址会被记录到历史栈中。
+
+
+
