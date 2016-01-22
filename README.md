@@ -127,3 +127,6 @@ void freeMemory() {
     }
 }
 ```
+
+## URL重定向
+URL重定向时，会多次回调Tab$mWebViewClient.onPageStarted方法
