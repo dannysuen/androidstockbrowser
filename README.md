@@ -132,15 +132,15 @@ void freeMemory() {
 URL重定向时，会多次回调Tab$mWebViewClient.onPageStarted方法。
 比如在地址栏输入qq.com后，回调方式如下：
 ```
-V/Tab: ⇢ onPageStarted(view=com.stockbrowser.BrowserWebView{6b332c VFEDHVCL .F...... 0,0-1080,1704}, url="http://qq.com/", favicon=android.graphics.Bitmap@23b4987f)
+V/Tab: ⇢ onPageStarted(view=com.stockbrowser.BrowserWebView, url="http://qq.com/", favicon=Bitmap@23b4987f)
 V/Tab: ⇠ onPageStarted [2ms]
-V/Tab: ⇢ onPageStarted(view=com.stockbrowser.BrowserWebView{6b332c VFEDHVCL .F...... 0,0-1080,1704}, url="http://www.qq.com/", favicon=android.graphics.Bitmap@23b4987f)
+V/Tab: ⇢ onPageStarted(view=com.stockbrowser.BrowserWebView, url="http://www.qq.com/", favicon=Bitmap@23b4987f)
 V/Tab: ⇠ onPageStarted [3ms]
-V/Tab: ⇢ onPageStarted(view=com.stockbrowser.BrowserWebView{6b332c VFEDHVCL .F...... 0,0-1080,1704}, url="http://xw.qq.com/index.htm", favicon=android.graphics.Bitmap@23b4987f)
+V/Tab: ⇢ onPageStarted(view=com.stockbrowser.BrowserWebView, url="http://xw.qq.com/index.htm", favicon=Bitmap@23b4987f)
 V/Tab: ⇠ onPageStarted [6ms]
-V/Tab: ⇢ onReceivedIcon(view=com.stockbrowser.BrowserWebView{6b332c VFEDHVCL .F....ID 0,0-1080,1704}, icon=android.graphics.Bitmap@315bd90a)
+V/Tab: ⇢ onReceivedIcon(view=com.stockbrowser.BrowserWebView, icon=Bitmap@315bd90a)
 V/Tab: ⇠ onReceivedIcon [3ms]
-V/Tab: ⇢ onPageFinished(view=com.stockbrowser.BrowserWebView{6b332c VFEDHVCL .F....ID 0,0-1080,1704}, url="http://xw.qq.com/index.htm")
+V/Tab: ⇢ onPageFinished(view=com.stockbrowser.BrowserWebView, url="http://xw.qq.com/index.htm")
 V/Tab: ⇠ onPageFinished [3ms]
 
 ```
