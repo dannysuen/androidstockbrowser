@@ -16,8 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
-
 import android.app.ProgressDialog;
 import android.app.WallpaperManager;
 import android.content.Context;

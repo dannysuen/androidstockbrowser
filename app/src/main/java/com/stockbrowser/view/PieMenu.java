@@ -16,7 +16,7 @@
 
 package com.stockbrowser.view;
 
-import com.android.browser.R;
+import com.stockbrowser.R;
 
 import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;

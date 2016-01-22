@@ -16,7 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
 import com.stockbrowser.preferences.WebsiteSettingsFragment;
 
 import android.app.Notification;

@@ -15,7 +15,7 @@
  */
 package com.stockbrowser.search;
 
-import com.android.browser.R;
+import com.stockbrowser.R;
 
 import android.content.Context;
 import android.content.res.Resources;

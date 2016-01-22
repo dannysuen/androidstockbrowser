@@ -16,7 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
 import com.stockbrowser.homepages.HomeProvider;
 
 import android.annotation.TargetApi;
@@ -69,6 +68,8 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.util.Vector;
 import java.util.regex.Pattern;
+
+import hugo.weaving.DebugLog;
 
 /**
  * Class for maintaining Tabs with a main WebView and a subwindow.
@@ -191,6 +192,7 @@ class Tab implements PictureListener {
 			return !uri1.getEncodedAuthority().equals(uri2.getEncodedAuthority());
 		}
 
+        @DebugLog
 		@Override
 		public void onPageStarted(WebView view, String url, Bitmap favicon) {
 			mInPageLoad = true;
@@ -228,6 +230,7 @@ class Tab implements PictureListener {
 			updateBookmarkedStatus();
 		}
 
+        @DebugLog
 		@Override
 		public void onPageFinished(WebView view, String url) {
 			mDisableOverrideUrlLoading = false;
@@ -263,8 +266,7 @@ class Tab implements PictureListener {
 				// to update the security state:
 				if (mCurrentState.mSecurityState == SecurityState.SECURITY_STATE_SECURE) {
 					// If NOT a 'safe' url, change the state to mixed content!
-					if (!(URLUtil.isHttpsUrl(url) || URLUtil.isDataUrl(url)
-							|| URLUtil.isAboutUrl(url))) {
+					if (!(URLUtil.isHttpsUrl(url) || URLUtil.isDataUrl(url) || URLUtil.isAboutUrl(url))) {
 						mCurrentState.mSecurityState = SecurityState.SECURITY_STATE_MIXED;
 					}
 				}
@@ -276,8 +278,7 @@ class Tab implements PictureListener {
 		 * WebCore if it is in the foreground.
 		 */
 		@Override
-		public void onReceivedError(WebView view, int errorCode,
-									String description, String failingUrl) {
+		public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
 			if (errorCode != WebViewClient.ERROR_HOST_LOOKUP &&
 					errorCode != WebViewClient.ERROR_CONNECT &&
 					errorCode != WebViewClient.ERROR_BAD_URL &&
@@ -298,8 +299,7 @@ class Tab implements PictureListener {
 		 * are trying to navigate to is the result of a POST.
 		 */
 		@Override
-		public void onFormResubmission(WebView view, final Message dontResend,
-									   final Message resend) {
+		public void onFormResubmission(WebView view, final Message dontResend, final Message resend) {
 			if (!mInForeground) {
 				dontResend.sendToTarget();
 				return;
@@ -353,8 +353,7 @@ class Tab implements PictureListener {
 		 * FIXME: Not sure what to do when reloading the page.
 		 */
 		@Override
-		public void doUpdateVisitedHistory(WebView view, String url,
-										   boolean isReload) {
+		public void doUpdateVisitedHistory(WebView view, String url, boolean isReload) {
 			mWebViewController.doUpdateVisitedHistory(Tab.this, isReload);
 		}
 
@@ -363,7 +362,7 @@ class Tab implements PictureListener {
 		 */
 		@Override
 		public void onReceivedSslError(final WebView view,
-									   final SslErrorHandler handler, final SslError error) {
+                                       final SslErrorHandler handler, final SslError error) {
 			if (!mInForeground) {
 				handler.cancel();
 				setSecurityState(SecurityState.SECURITY_STATE_NOT_SECURE);
@@ -472,8 +471,7 @@ class Tab implements PictureListener {
 		}
 
 		@Override
-		public void onReceivedLoginRequest(WebView view, String realm,
-										   String account, String args) {
+		public void onReceivedLoginRequest(WebView view, String realm, String account, String args) {
 			new DeviceAccountLogin(mWebViewController.getActivity(), view, Tab.this,
 					mWebViewController).handleLogin(realm, account, args);
 		}
@@ -575,6 +573,7 @@ class Tab implements PictureListener {
 			}
 		}
 
+        @DebugLog
 		@Override
 		public void onProgressChanged(WebView view, int newProgress) {
 			mPageLoadProgress = newProgress;
@@ -593,6 +592,7 @@ class Tab implements PictureListener {
 			mWebViewController.onReceivedTitle(Tab.this, title);
 		}
 
+		@DebugLog
 		@Override
 		public void onReceivedIcon(WebView view, Bitmap icon) {
 			mCurrentState.mFavicon = icon;
@@ -862,7 +862,7 @@ class Tab implements PictureListener {
 	private static synchronized Bitmap getDefaultFavicon(Context context) {
 		if (sDefaultFavicon == null) {
 			sDefaultFavicon = BitmapFactory.decodeResource(
-					context.getResources(), R.drawable.app_web_browser_sm);
+                    context.getResources(), R.drawable.app_web_browser_sm);
 		}
 		return sDefaultFavicon;
 	}

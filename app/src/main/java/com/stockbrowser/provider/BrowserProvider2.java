@@ -16,7 +16,7 @@
 
 package com.stockbrowser.provider;
 
-import com.android.browser.R;
+import com.stockbrowser.R;
 import com.stockbrowser.UrlUtils;
 import com.stockbrowser.compats.Browser;
 import com.stockbrowser.compats.Browser.BookmarkColumns;

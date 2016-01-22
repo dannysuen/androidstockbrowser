@@ -16,8 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DownloadManager;

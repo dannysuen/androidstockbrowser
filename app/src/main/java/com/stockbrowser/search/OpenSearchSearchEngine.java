@@ -15,10 +15,10 @@
  */
 package com.stockbrowser.search;
 
-import com.android.browser.R;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
+import com.stockbrowser.R;
 import com.stockbrowser.compats.Browser;
 
 import org.json.JSONArray;

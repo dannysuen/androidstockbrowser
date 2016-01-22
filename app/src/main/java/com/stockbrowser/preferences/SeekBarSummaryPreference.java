@@ -16,7 +16,8 @@
 
 package com.stockbrowser.preferences;
 
-import com.android.browser.R;
+
+import com.stockbrowser.R;
 import com.stockbrowser.compats.SeekBarPreference;
 
 import android.content.Context;

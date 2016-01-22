@@ -16,8 +16,8 @@
 
 package com.stockbrowser.widget;
 
-import com.android.browser.R;
 import com.stockbrowser.BrowserActivity;
+import com.stockbrowser.R;
 
 import android.annotation.TargetApi;
 import android.app.PendingIntent;

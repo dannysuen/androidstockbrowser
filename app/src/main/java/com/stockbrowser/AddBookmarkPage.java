@@ -16,7 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
 import com.stockbrowser.addbookmark.FolderSpinner;
 import com.stockbrowser.addbookmark.FolderSpinnerAdapter;
 import com.stockbrowser.provider.BrowserContract;

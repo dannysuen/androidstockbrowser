@@ -16,7 +16,7 @@
 
 package com.stockbrowser.view;
 
-import com.android.browser.R;
+import com.stockbrowser.R;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -33,8 +33,7 @@ public class PieStackView extends BasePieView {
 	private int mMinHeight;
 
 	public PieStackView(Context ctx) {
-		mMinHeight = (int) ctx.getResources()
-				.getDimension(R.dimen.qc_tab_title_height);
+		mMinHeight = (int) ctx.getResources().getDimension(R.dimen.qc_tab_title_height);
 	}
 
 	public void setOnCurrentListener(OnCurrentListener l) {

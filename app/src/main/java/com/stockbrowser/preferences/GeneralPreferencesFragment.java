@@ -16,9 +16,9 @@
 
 package com.stockbrowser.preferences;
 
-import com.android.browser.R;
 import com.stockbrowser.BrowserPreferencesPage;
 import com.stockbrowser.BrowserSettings;
+import com.stockbrowser.R;
 import com.stockbrowser.UrlUtils;
 import com.stockbrowser.homepages.HomeProvider;
 

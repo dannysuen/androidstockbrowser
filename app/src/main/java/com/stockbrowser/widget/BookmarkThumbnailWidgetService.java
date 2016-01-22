@@ -16,8 +16,8 @@
 
 package com.stockbrowser.widget;
 
-import com.android.browser.R;
 import com.stockbrowser.BrowserActivity;
+import com.stockbrowser.R;
 import com.stockbrowser.compats.BrowserContract;
 import com.stockbrowser.compats.BrowserContract.Bookmarks;
 import com.stockbrowser.provider.BrowserProvider2;

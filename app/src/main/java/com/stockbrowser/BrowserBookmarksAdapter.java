@@ -16,7 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
 import com.stockbrowser.compats.BrowserContract;
 import com.stockbrowser.util.ThreadedCursorAdapter;
 import com.stockbrowser.view.BookmarkContainer;

@@ -16,7 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
 import com.stockbrowser.provider.BrowserContract;
 import com.stockbrowser.provider.BrowserProvider2;
 import com.stockbrowser.search.SearchEngine;

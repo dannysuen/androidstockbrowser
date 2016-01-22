@@ -15,7 +15,8 @@
  */
 package com.stockbrowser.util;
 
-import com.android.browser.R;
+
+import com.stockbrowser.R;
 
 import android.content.Context;
 import android.database.Cursor;

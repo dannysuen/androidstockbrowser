@@ -16,7 +16,7 @@
 
 package com.stockbrowser.preferences;
 
-import com.android.browser.R;
+import com.stockbrowser.R;
 
 import android.os.Bundle;
 import android.preference.PreferenceFragment;

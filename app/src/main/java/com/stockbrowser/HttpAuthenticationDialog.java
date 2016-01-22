@@ -15,8 +15,6 @@
  */
 package com.stockbrowser;
 
-import com.android.browser.R;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;

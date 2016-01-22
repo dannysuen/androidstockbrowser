@@ -16,7 +16,7 @@
 
 package com.stockbrowser.preferences;
 
-import com.android.browser.R;
+import com.stockbrowser.R;
 import com.stockbrowser.WebStorageSizeManager;
 import com.stockbrowser.provider.BrowserContract.Bookmarks;
 
@@ -272,14 +272,10 @@ public class WebsiteSettingsFragment extends ListFragment implements OnClickList
 			super(context, rsc);
 			mResource = rsc;
 			mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			mDefaultIcon = BitmapFactory.decodeResource(getResources(),
-					R.drawable.app_web_browser_sm);
-			mUsageEmptyIcon = BitmapFactory.decodeResource(getResources(),
-					R.drawable.ic_list_data_off);
-			mUsageLowIcon = BitmapFactory.decodeResource(getResources(),
-					R.drawable.ic_list_data_small);
-			mUsageHighIcon = BitmapFactory.decodeResource(getResources(),
-					R.drawable.ic_list_data_large);
+			mDefaultIcon = BitmapFactory.decodeResource(getResources(), R.drawable.app_web_browser_sm);
+			mUsageEmptyIcon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_list_data_off);
+			mUsageLowIcon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_list_data_small);
+			mUsageHighIcon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_list_data_large);
 			mLocationAllowedIcon = BitmapFactory.decodeResource(getResources(),
 					R.drawable.ic_gps_on_holo_dark);
 			mLocationDisallowedIcon = BitmapFactory.decodeResource(getResources(),

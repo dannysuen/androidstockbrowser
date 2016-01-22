@@ -17,8 +17,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
-
 import android.content.Context;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;

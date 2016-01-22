@@ -16,8 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
-
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;

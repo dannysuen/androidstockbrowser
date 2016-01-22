@@ -16,7 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
 import com.stockbrowser.preferences.BandwidthPreferencesFragment;
 import com.stockbrowser.preferences.DebugPreferencesFragment;
 

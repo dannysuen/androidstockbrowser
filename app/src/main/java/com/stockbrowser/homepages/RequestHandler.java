@@ -15,7 +15,7 @@
  */
 package com.stockbrowser.homepages;
 
-import com.android.browser.R;
+import com.stockbrowser.R;
 import com.stockbrowser.provider.BrowserContract;
 import com.stockbrowser.provider.BrowserContract.Bookmarks;
 import com.stockbrowser.provider.BrowserContract.History;

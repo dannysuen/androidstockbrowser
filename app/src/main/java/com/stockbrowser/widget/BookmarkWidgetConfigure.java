@@ -16,8 +16,9 @@
 
 package com.stockbrowser.widget;
 
-import com.android.browser.R;
+
 import com.stockbrowser.AddBookmarkPage.BookmarkAccount;
+import com.stockbrowser.R;
 import com.stockbrowser.compats.BrowserContract.Accounts;
 import com.stockbrowser.provider.BrowserProvider2;
 

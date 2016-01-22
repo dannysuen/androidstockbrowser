@@ -16,7 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
 import com.stockbrowser.view.PieItem;
 import com.stockbrowser.view.PieMenu;
 import com.stockbrowser.view.PieStackView;

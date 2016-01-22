@@ -16,7 +16,7 @@
 
 package com.stockbrowser.addbookmark;
 
-import com.android.browser.R;
+import com.stockbrowser.R;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

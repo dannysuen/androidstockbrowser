@@ -16,8 +16,8 @@
 
 package com.stockbrowser.preferences;
 
-import com.android.browser.R;
 import com.stockbrowser.PreferenceKeys;
+import com.stockbrowser.R;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -20,6 +20,8 @@ import android.app.Application;
 import android.util.Log;
 import android.webkit.CookieSyncManager;
 
+import timber.log.Timber;
+
 public class Browser extends Application {
 
 	// Set to true to enable verbose logging.
@@ -31,6 +33,12 @@ public class Browser extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+
+		if (BuildConfig.DEBUG) {
+			Timber.plant(new Timber.DebugTree());
+		} else {
+//			Timber.plant(new CrashReportingTree());
+		}
 
 		if (LOGV_ENABLED)
 			Log.v(LOGTAG, "Browser.onCreate: this=" + this);

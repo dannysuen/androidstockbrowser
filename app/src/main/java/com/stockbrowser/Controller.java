@@ -16,7 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
 import com.stockbrowser.provider.BrowserContract;
 import com.stockbrowser.provider.BrowserContract.Images;
 import com.stockbrowser.provider.BrowserProvider2.Thumbnails;
@@ -940,8 +939,7 @@ public class Controller implements WebViewController, UiController, ActivityCont
 	public void onReceivedTitle(Tab tab, final String title) {
 		mUi.onTabDataChanged(tab);
 		final String pageUrl = tab.getOriginalUrl();
-		if (TextUtils.isEmpty(pageUrl) || pageUrl.length()
-				>= SQLiteDatabase.SQLITE_MAX_LIKE_PATTERN_LENGTH) {
+		if (TextUtils.isEmpty(pageUrl) || pageUrl.length() >= SQLiteDatabase.SQLITE_MAX_LIKE_PATTERN_LENGTH) {
 			return;
 		}
 		// Update the title in the history database if not in private browsing mode

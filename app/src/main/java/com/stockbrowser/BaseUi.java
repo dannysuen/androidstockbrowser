@@ -16,8 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -119,8 +117,7 @@ public abstract class BaseUi implements UI {
 		mUiController = controller;
 		mTabControl = controller.getTabControl();
 		Resources res = mActivity.getResources();
-		mInputManager = (InputMethodManager)
-				browser.getSystemService(Activity.INPUT_METHOD_SERVICE);
+		mInputManager = (InputMethodManager) browser.getSystemService(Activity.INPUT_METHOD_SERVICE);
 		mLockIconSecure = res.getDrawable(R.drawable.ic_secure_holo_dark);
 		mLockIconMixed = res.getDrawable(R.drawable.ic_secure_partial_holo_dark);
 		FrameLayout frameLayout = (FrameLayout) mActivity.getWindow()

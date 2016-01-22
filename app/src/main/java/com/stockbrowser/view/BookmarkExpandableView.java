@@ -16,9 +16,9 @@
 
 package com.stockbrowser.view;
 
-import com.android.browser.R;
 import com.stockbrowser.BreadCrumbView;
 import com.stockbrowser.BrowserBookmarksAdapter;
+import com.stockbrowser.R;
 import com.stockbrowser.compats.BrowserContract;
 
 import org.json.JSONException;

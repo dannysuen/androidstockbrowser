@@ -16,10 +16,10 @@
 
 package com.stockbrowser.preferences;
 
-import com.android.browser.R;
 import com.stockbrowser.BrowserSettings;
 import com.stockbrowser.GoogleAccountLogin;
 import com.stockbrowser.PreferenceKeys;
+import com.stockbrowser.R;
 
 import android.os.Bundle;
 import android.preference.Preference;

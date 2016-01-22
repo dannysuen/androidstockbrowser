@@ -15,8 +15,6 @@
  */
 package com.stockbrowser;
 
-import com.android.browser.R;
-
 import android.annotation.TargetApi;
 import android.app.SearchManager;
 import android.content.Context;

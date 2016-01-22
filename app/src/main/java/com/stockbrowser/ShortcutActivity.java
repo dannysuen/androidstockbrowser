@@ -16,8 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -25,8 +23,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class ShortcutActivity extends FragmentActivity
-		implements BookmarksPageCallbacks, OnClickListener {
+public class ShortcutActivity extends FragmentActivity implements BookmarksPageCallbacks, OnClickListener {
 
 	private BrowserBookmarksPage mBookmarks;
 

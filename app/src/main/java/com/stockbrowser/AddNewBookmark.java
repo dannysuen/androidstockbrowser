@@ -16,8 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;

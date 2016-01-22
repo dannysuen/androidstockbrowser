@@ -16,8 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
-
 import android.content.Context;
 import android.graphics.Color;
 import android.util.AttributeSet;

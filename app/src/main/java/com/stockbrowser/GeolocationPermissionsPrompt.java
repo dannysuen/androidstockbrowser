@@ -16,8 +16,6 @@
 
 package com.stockbrowser;
 
-import com.android.browser.R;
-
 import android.content.Context;
 import android.net.Uri;
 import android.util.AttributeSet;
