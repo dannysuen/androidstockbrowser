@@ -141,5 +141,13 @@ V/Tab: ⇢ onPageFinished(view=BrowserWebView, url="http://xw.qq.com/index.htm")
 ```
 可见每重定向一次，就会回调`onPageStarted`方法，倘若需要多次重定向，则每次都会回调`onPageStarted`方法。只有最终重定向的网址会被记录到历史栈中。
 
+## 获取Favicon分析
+对一个标签页，获取Favicon时机有：
+1. Tab$mWebViewClient.onPageStarted
+2. Tab$mWebViewClient.onReceivedIcon
+
+值得注意的是，这两个回调返回的Bitmap对象并不是同一个。
+
+假设先访问A（qq.com），onPageStarted返回Favicon A1，onReceivedIcon返回Favicon A2，接着访问B，B是没有Favicon的站点（比如mail.126.com），onPageStarted返回Favicon A2。
 
 
