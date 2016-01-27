@@ -129,6 +129,8 @@ void freeMemory() {
     }
 }
 ```
+问题是，该方法并不能实质释放内存，至少在小米4c上调试时观察Android Monitor的Memory曲线，并无内存释放。
+
 
 ## 网址重定向的分析
 当发生网址重定向时，WebView会多次回调WebViewClient.onPageStarted方法。比如在地址栏输入`qq.com`后，回调方式如下：
