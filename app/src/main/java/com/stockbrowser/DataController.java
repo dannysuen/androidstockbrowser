@@ -286,7 +286,11 @@ public class DataController {
 						BrowserContract.Bookmarks.URL + " == ?",
 						new String[]{url},
 						null);
-				isBookmark = cursor.moveToFirst();
+
+				// prevent NullPointerException
+				if (cursor != null) {
+					isBookmark = cursor.moveToFirst();
+				}
 			} catch (SQLiteException e) {
 				Log.e(LOGTAG, "Error checking for bookmark: " + e);
 			} finally {
@@ -302,8 +306,7 @@ public class DataController {
 			ContentResolver cr = mContext.getContentResolver();
 			ContentValues values = new ContentValues();
 			values.put(History.TITLE, title);
-			cr.update(History.CONTENT_URI, values, History.URL + "=?",
-					new String[]{url});
+			cr.update(History.CONTENT_URI, values, History.URL + "=?", new String[]{url});
 		}
 	}
 }

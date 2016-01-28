@@ -301,8 +301,7 @@ class TabControl {
 					for (Tab dt : mTabs) {
 						Log.e(LOGTAG, dt.toString());
 					}
-					throw new IllegalStateException(
-							"Error saving state, duplicate tab ids!");
+					throw new IllegalStateException("Error saving state, duplicate tab ids!");
 				}
 				outState.putBundle(key, tabState);
 			} else {
@@ -453,6 +452,7 @@ class TabControl {
 			Log.w(LOGTAG, "Free " + tabs.size() + " tabs in the browser");
 			for (Tab t : tabs) {
 				// store the WebView's state.
+				// TODO: 为什么不保存返回的Bundle
 				t.saveState();
 				// destroy the tab
 				t.destroy();

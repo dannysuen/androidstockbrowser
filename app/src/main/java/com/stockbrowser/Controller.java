@@ -244,8 +244,7 @@ public class Controller implements WebViewController, UiController, ActivityCont
 	 * @param screenshot Bitmap of a screenshot of the page.  Stored in the Intent with {@link
 	 *                   com.stockbrowser.compats.Browser#EXTRA_SHARE_SCREENSHOT}
 	 */
-	static final void sharePage(Context c, String title, String url,
-								Bitmap favicon, Bitmap screenshot) {
+	static final void sharePage(Context c, String title, String url, Bitmap favicon, Bitmap screenshot) {
 		Intent send = new Intent(Intent.ACTION_SEND);
 		send.setType("text/plain");
 		send.putExtra(Intent.EXTRA_TEXT, url);
@@ -691,6 +690,7 @@ public class Controller implements WebViewController, UiController, ActivityCont
 	/* package */ Bundle createSaveState() {
 		Bundle saveState = new Bundle();
 		mTabControl.saveState(saveState);
+		mTabControl.saveState(saveState);
 		if (!saveState.isEmpty()) {
 			// Save time so that we know how old incognito tabs (if any) are.
 			saveState.putSerializable("lastActiveDate", Calendar.getInstance());
@@ -790,7 +790,8 @@ public class Controller implements WebViewController, UiController, ActivityCont
 
 	@Override
 	public void onLowMemory() {
-		mTabControl.freeMemory();
+		// 没有发现TabControl.freeMemory能够释放内存
+//		mTabControl.freeMemory();
 	}
 
 	@Override
@@ -1226,7 +1227,7 @@ public class Controller implements WebViewController, UiController, ActivityCont
 	/**
 	 * Open the Go page.
 	 *
-	 * @param startWithHistory If true, open starting on the history tab. Otherwise, start with the bookmarks
+	 * If true, open starting on the history tab. Otherwise, start with the bookmarks
 	 *                         tab.
 	 */
 	@Override
@@ -1607,7 +1608,8 @@ public class Controller implements WebViewController, UiController, ActivityCont
 				break;
 
 			case R.id.forward_menu_id:
-				getCurrentTab().goForward();
+//				getCurrentTab().goForward();
+				mTabControl.freeMemory();
 				break;
 
 			case R.id.close_menu_id:
@@ -1900,7 +1902,6 @@ public class Controller implements WebViewController, UiController, ActivityCont
 	/**
 	 * add the current page as a bookmark to the given folder id
 	 *
-	 * @param folderId     use -1 for the default folder
 	 * @param editExisting If true, check to see whether the site is already bookmarked, and if it is, edit
 	 *                     that bookmark.  If false, and the site is already bookmarked, do not attempt to
 	 *                     edit the existing bookmark.

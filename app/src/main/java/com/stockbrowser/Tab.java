@@ -277,6 +277,7 @@ class Tab implements PictureListener {
 		 * Show a dialog informing the user of the network error reported by
 		 * WebCore if it is in the foreground.
 		 */
+        @DebugLog
 		@Override
 		public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
 			if (errorCode != WebViewClient.ERROR_HOST_LOOKUP &&
