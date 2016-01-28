@@ -152,4 +152,6 @@ V/Tab: ⇢ onPageFinished(view=BrowserWebView, url="http://xw.qq.com/index.htm")
 
 假设先访问A（qq.com），onPageStarted返回Favicon A1，onReceivedIcon返回Favicon A2，接着访问B，B是没有Favicon的站点（比如mail.126.com），onPageStarted返回Favicon A2。
 
-
+## 获取标题分析
+`WebChromeClient.onReceivedTitle(WebView view, String title)`提供了从`WebView`获取标题的方法。
+一般加载一个网页时，`onReceivedTitle`会在`onPageStarted`和`onPageFinished`之间被回调，但是调用`goBack`回到上一个网页，`onReceivedTitle`却不会被回调。
