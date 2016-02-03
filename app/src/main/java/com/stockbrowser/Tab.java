@@ -616,6 +616,7 @@ class Tab implements PictureListener {
 			}
 		}
 
+		@DebugLog
 		@Override
 		public void onShowCustomView(View view, WebChromeClient.CustomViewCallback callback) {
 			Activity activity = mWebViewController.getActivity();
@@ -624,11 +625,13 @@ class Tab implements PictureListener {
 			}
 		}
 
+		@DebugLog
 		@Override
 		public void onShowCustomView(View view, int requestedOrientation,
 									 WebChromeClient.CustomViewCallback callback) {
-			if (mInForeground) mWebViewController.showCustomView(Tab.this, view,
-					requestedOrientation, callback);
+			if (mInForeground) {
+				mWebViewController.showCustomView(Tab.this, view, requestedOrientation, callback);
+			}
 		}
 
 		@Override

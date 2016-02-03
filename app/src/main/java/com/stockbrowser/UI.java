@@ -34,71 +34,71 @@ import java.util.List;
  */
 public interface UI {
 
-	void onPause();
+    void onPause();
 
-	void onResume();
+    void onResume();
 
-	public void onDestroy();
+    void onDestroy();
 
-	public void onConfigurationChanged(Configuration config);
+    void onConfigurationChanged(Configuration config);
 
-	public boolean onBackKey();
+    boolean onBackKey();
 
-	public boolean onMenuKey();
+    public boolean onMenuKey();
 
-	public boolean needsRestoreAllTabs();
+    public boolean needsRestoreAllTabs();
 
-	public void addTab(Tab tab);
+    public void addTab(Tab tab);
 
-	public void removeTab(Tab tab);
+    public void removeTab(Tab tab);
 
-	public void setActiveTab(Tab tab);
+    public void setActiveTab(Tab tab);
 
-	public void updateTabs(List<Tab> tabs);
+    public void updateTabs(List<Tab> tabs);
 
-	public void detachTab(Tab tab);
+    public void detachTab(Tab tab);
 
-	public void attachTab(Tab tab);
+    public void attachTab(Tab tab);
 
-	public void onSetWebView(Tab tab, WebView view);
+    public void onSetWebView(Tab tab, WebView view);
 
-	public void createSubWindow(Tab tab, WebView subWebView);
+    public void createSubWindow(Tab tab, WebView subWebView);
 
-	public void attachSubWindow(View subContainer);
+    public void attachSubWindow(View subContainer);
 
-	public void removeSubWindow(View subContainer);
+    public void removeSubWindow(View subContainer);
 
-	public void onTabDataChanged(Tab tab);
+    public void onTabDataChanged(Tab tab);
 
-	public void onPageStopped(Tab tab);
+    public void onPageStopped(Tab tab);
 
-	public void onProgressChanged(Tab tab);
+    public void onProgressChanged(Tab tab);
 
-	public void showActiveTabsPage();
+    public void showActiveTabsPage();
 
-	public void removeActiveTabsPage();
+    public void removeActiveTabsPage();
 
-	public void showComboView(ComboViews startingView, Bundle extra);
+    public void showComboView(ComboViews startingView, Bundle extra);
 
-	public void showCustomView(View view, int requestedOrientation, CustomViewCallback callback);
+    public void showCustomView(View view, int requestedOrientation, CustomViewCallback callback);
 
-	public void onHideCustomView();
+    public void onHideCustomView();
 
-	public boolean isCustomViewShowing();
+    public boolean isCustomViewShowing();
 
-	public boolean onPrepareOptionsMenu(Menu menu);
+    public boolean onPrepareOptionsMenu(Menu menu);
 
-	public void updateMenuState(Tab tab, Menu menu);
+    public void updateMenuState(Tab tab, Menu menu);
 
-	public void onOptionsMenuOpened();
+    public void onOptionsMenuOpened();
 
-	public void onExtendedMenuOpened();
+    public void onExtendedMenuOpened();
 
-	public boolean onOptionsItemSelected(MenuItem item);
+    public boolean onOptionsItemSelected(MenuItem item);
 
-	public void onOptionsMenuClosed(boolean inLoad);
+    public void onOptionsMenuClosed(boolean inLoad);
 
-	public void onExtendedMenuClosed(boolean inLoad);
+    public void onExtendedMenuClosed(boolean inLoad);
 
 	public void onContextMenuCreated(Menu menu);
 
