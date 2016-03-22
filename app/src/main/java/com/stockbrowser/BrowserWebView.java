@@ -51,8 +51,7 @@ public class BrowserWebView extends WebView {
 	 * @param attrs
 	 * @param defStyle
 	 */
-	public BrowserWebView(
-			Context context, AttributeSet attrs, int defStyle, boolean privateBrowsing) {
+	public BrowserWebView(Context context, AttributeSet attrs, int defStyle, boolean privateBrowsing) {
 		super(context, attrs, defStyle, privateBrowsing);
 	}
 

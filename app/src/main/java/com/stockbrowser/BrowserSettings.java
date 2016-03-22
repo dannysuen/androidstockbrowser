@@ -50,6 +50,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.WeakHashMap;
 
+import hugo.weaving.DebugLog;
+
 /**
  * Class for managing settings
  */
@@ -254,8 +256,8 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
 		}
 	}
 
+	@DebugLog
 	public void startManagingSettings(WebSettings settings) {
-
 		if (mNeedsSharedSync) {
 			syncSharedSettings();
 		}
@@ -267,6 +269,7 @@ public class BrowserSettings implements OnSharedPreferenceChangeListener,
 		}
 	}
 
+	@DebugLog
 	public void stopManagingSettings(WebSettings settings) {
 		Iterator<WeakReference<WebSettings>> iter = mManagedSettings.iterator();
 		while (iter.hasNext()) {

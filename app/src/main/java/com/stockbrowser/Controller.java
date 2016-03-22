@@ -791,7 +791,7 @@ public class Controller implements WebViewController, UiController, ActivityCont
 	@Override
 	public void onLowMemory() {
 		// 没有发现TabControl.freeMemory能够释放内存
-//		mTabControl.freeMemory();
+		mTabControl.freeMemory();
 	}
 
 	@Override
@@ -1608,8 +1608,8 @@ public class Controller implements WebViewController, UiController, ActivityCont
 				break;
 
 			case R.id.forward_menu_id:
-//				getCurrentTab().goForward();
-				mTabControl.freeMemory();
+				getCurrentTab().goForward();
+//				mTabControl.freeMemory();
 				break;
 
 			case R.id.close_menu_id:

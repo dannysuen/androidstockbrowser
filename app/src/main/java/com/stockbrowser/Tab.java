@@ -1478,8 +1478,7 @@ class Tab implements PictureListener {
 		if (mParent != null) {
 			mSavedState.putLong(PARENTTAB, mParent.mId);
 		}
-		mSavedState.putBoolean(USERAGENT,
-				mSettings.hasDesktopUseragent(getWebView()));
+		mSavedState.putBoolean(USERAGENT, mSettings.hasDesktopUseragent(getWebView()));
 		return mSavedState;
 	}
 
