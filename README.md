@@ -157,3 +157,7 @@ V/Tab: ⇢ onPageFinished(view=BrowserWebView, url="http://xw.qq.com/index.htm")
 ## 获取标题分析
 `WebChromeClient.onReceivedTitle(WebView view, String title)`提供了从`WebView`获取标题的方法。
 一般加载一个网页时，`onReceivedTitle`会在`onPageStarted`和`onPageFinished`之间被回调，但是调用`goBack`回到上一个网页，`onReceivedTitle`却不会被回调。
+
+## TitleBar分析
+TitleBar里带有刷/暂停按钮，这个按钮的状态变化将是接下来分析的重点
+
