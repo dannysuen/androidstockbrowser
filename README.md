@@ -150,7 +150,9 @@ V/Tab: ⇢ onPageFinished(view=BrowserWebView, url="http://xw.qq.com/index.htm")
 1. Tab$mWebViewClient.onPageStarted
 2. Tab$mWebViewClient.onReceivedIcon
 
-值得注意的是，这两个回调返回的Bitmap对象并不是同一个。
+值得注意的是，这两个回调返回的Bitmap对象并不是同一个。那么这两个方法返回的favicon各是什么呢？
+
+onPageStarted()返回上一个网页的favicon；而onReceivedIcon返回当前网页的favicon。
 
 假设先访问A（qq.com），onPageStarted返回Favicon A1，onReceivedIcon返回Favicon A2，接着访问B，B是没有Favicon的站点（比如mail.126.com），onPageStarted返回Favicon A2。
 
